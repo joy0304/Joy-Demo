@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1KY-IK-UTb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Write View Controller-->
+        <scene sceneID="cUO-i7-QNY">
+            <objects>
+                <viewController storyboardIdentifier="writeViewController" id="1KY-IK-UTb" customClass="WriteViewController" customModule="MJianshu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jOc-65-oXz"/>
+                        <viewControllerLayoutGuide type="bottom" id="mSw-Uo-LP6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xDz-Q8-iIC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Mr-nL-jQd">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="nDb-4K-Hdm">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qbQ-7E-Feb">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="1KY-IK-UTb" id="Vtl-nD-uRW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="GkP-A9-j5c"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Mr-nL-jQd" firstAttribute="leading" secondItem="xDz-Q8-iIC" secondAttribute="leading" id="RAz-K2-oEO"/>
+                            <constraint firstAttribute="trailing" secondItem="1Mr-nL-jQd" secondAttribute="trailing" id="lvc-sE-3Kq"/>
+                            <constraint firstItem="1Mr-nL-jQd" firstAttribute="top" secondItem="jOc-65-oXz" secondAttribute="bottom" symbolic="YES" id="oyR-Gl-VlI"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="doneButton" destination="GkP-A9-j5c" id="iWq-r1-6PO"/>
+                        <outlet property="navigationBar" destination="1Mr-nL-jQd" id="VGz-Zs-gUI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6p-iD-Evm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.46666666666667" y="328.49333333333334"/>
+        </scene>
+    </scenes>
+</document>

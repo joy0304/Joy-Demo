@@ -16,7 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        //创建窗口
+        window = UIWindow(frame: MainBounds)
+        //创建根视图控制器
+        let mainTabBarVC = MainTabBarController()
+        self.window?.rootViewController = mainTabBarVC
+        //显示窗口
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

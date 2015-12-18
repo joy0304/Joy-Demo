@@ -19,10 +19,10 @@
 		1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F931C1FAE1C0089542C /* MyViewController.swift */; };
 		1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F951C1FAFE80089542C /* CommonData.swift */; };
 		1B6E9F981C1FB2580089542C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F971C1FB2580089542C /* WriteViewController.swift */; };
-		1B6E9F9F1C1FB88B0089542C /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F9E1C1FB88B0089542C /* MainNavigationController.swift */; };
 		1B6E9FA21C1FBB270089542C /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9FA11C1FBB270089542C /* Write.storyboard */; };
 		1BA63C3D1C23E3ED00604572 /* ThemeScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA63C3C1C23E3ED00604572 /* ThemeScrollController.swift */; };
 		1BA63C3F1C23E6A000604572 /* ContentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA63C3E1C23E6A000604572 /* ContentTableController.swift */; };
+		9BDA78991C2479DD00B98981 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA78981C2479DD00B98981 /* Extension.swift */; };
 		ABCA94A5F229823DE589927B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24043546678E5D4DB0D01AB /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +42,10 @@
 		1B6E9F931C1FAE1C0089542C /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		1B6E9F951C1FAFE80089542C /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		1B6E9F971C1FB2580089542C /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
-		1B6E9F9E1C1FB88B0089542C /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		1B6E9FA11C1FBB270089542C /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
 		1BA63C3C1C23E3ED00604572 /* ThemeScrollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeScrollController.swift; sourceTree = "<group>"; };
 		1BA63C3E1C23E6A000604572 /* ContentTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableController.swift; sourceTree = "<group>"; };
+		9BDA78981C2479DD00B98981 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AED33F99691306BFD43AE82F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F24043546678E5D4DB0D01AB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				1B6E9F721C1F9E240089542C /* AppDelegate.swift */,
+				9BDA78971C2479BC00B98981 /* Extension */,
 				1B6E9F8C1C1FACFF0089542C /* Controller */,
 				1B6E9F8B1C1FACF80089542C /* View */,
 				1B6E9F8A1C1FACD30089542C /* Model */,
@@ -97,7 +98,6 @@
 		1B6E9F871C1FAB740089542C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1B6E9F9E1C1FB88B0089542C /* MainNavigationController.swift */,
 				1B6E9F881C1FABBA0089542C /* MainTabBarController.swift */,
 				1B6E9F951C1FAFE80089542C /* CommonData.swift */,
 			);
@@ -190,6 +190,14 @@
 				1B6E9F7E1C1F9E240089542C /* LaunchScreen.storyboard */,
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		9BDA78971C2479BC00B98981 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9BDA78981C2479DD00B98981 /* Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C6960E6CAFEF103D1914165C /* Pods */ = {
@@ -333,7 +341,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B6E9F9F1C1FB88B0089542C /* MainNavigationController.swift in Sources */,
 				1B6E9F981C1FB2580089542C /* WriteViewController.swift in Sources */,
 				1BA63C3F1C23E6A000604572 /* ContentTableController.swift in Sources */,
 				1B6E9F7B1C1F9E240089542C /* MJianshu.xcdatamodeld in Sources */,
@@ -343,6 +350,7 @@
 				1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */,
 				1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */,
 				1B6E9F921C1FADF60089542C /* FriendsViewController.swift in Sources */,
+				9BDA78991C2479DD00B98981 /* Extension.swift in Sources */,
 				1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */,
 				1B6E9F8E1C1FAD4E0089542C /* FindViewController.swift in Sources */,
 			);
@@ -456,6 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Martinwjl.MJianshu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -472,6 +481,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Martinwjl.MJianshu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

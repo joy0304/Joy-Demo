@@ -6,9 +6,9 @@
 //  Copyright © 2015年 Martin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-public let Width = UIScreen.mainScreen().bounds.size.width
-public let Height = UIScreen.mainScreen().bounds.size.height
+public let ScreenWidth = UIScreen.mainScreen().bounds.size.width
+public let ScreenHeight = UIScreen.mainScreen().bounds.size.height
 public let MainBounds = UIScreen.mainScreen().bounds
+public let statusBar = 20

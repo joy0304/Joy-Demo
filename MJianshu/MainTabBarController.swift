@@ -31,7 +31,7 @@ extension MainTabBarController{
         //我的
         addChildVC(MyViewController(), title: "我的", image: "my_1", selected: "my_2")
         //添加中间按钮
-        self.addCenterButton(btnimage: UIImage(named: "middleImage")!, selectedbtnimg: UIImage(named: "middleImage")!, selector: "addWriteView", view: self.view)
+        self.addCenterButton(btnimage: UIImage(named: "collect_2")!, selectedbtnimg: UIImage(named: "collect_2")!, selector: "addWriteView", view: self.view)
         
     }
     

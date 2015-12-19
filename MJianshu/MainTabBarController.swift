@@ -9,7 +9,7 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-
+    let tabbarBigImageLength: CGFloat = 43
     override func viewDidLoad() {
         super.viewDidLoad()
 

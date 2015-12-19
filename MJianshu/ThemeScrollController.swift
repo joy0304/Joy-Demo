@@ -8,17 +8,15 @@
 
 import UIKit
 
-class ThemeScrollController:UIView,UIScrollViewDelegate{
-
-    
+class ThemeScrollController:UIViewController,UIScrollViewDelegate{
     var topScroll: UIScrollView!
     var bottomScroll: UIScrollView!
     var topScrollMaxX:CGFloat = 0
     var topScrollHeight: CGFloat = 40
     let themeArr = ["热门","七日热门","三十日热门","最新","生活家","世间事","@IT","视频","七嘴八舌","电影","经典","连载","读图","市集"]
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         //设置顶部ScrollView
         setTopScroll()
         setBottomScroll()
@@ -30,7 +28,7 @@ class ThemeScrollController:UIView,UIScrollViewDelegate{
         topScroll.showsHorizontalScrollIndicator = false
         topScroll.showsVerticalScrollIndicator = false
         topScroll.backgroundColor = UIColor.lightGrayColor()
-        self.addSubview(topScroll)
+        view.addSubview(topScroll)
         //为其增加label，显示theme名字
         for idx in 0..<themeArr.count{
             let labelGapX: CGFloat = 20
@@ -69,7 +67,7 @@ class ThemeScrollController:UIView,UIScrollViewDelegate{
         bottomScroll.clipsToBounds = true
         bottomScroll.bounces = false
         bottomScroll.delegate = self
-        self.addSubview(bottomScroll)
+        view.addSubview(bottomScroll)
         
         for i in 0..<themeArr.count {
             let contentController = ContentTableController()

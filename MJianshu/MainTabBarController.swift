@@ -12,17 +12,8 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-        
-        //添加所有子控制器
-        addAllChildViewController()
-        
-        
-        
-=======
 
         addAllChildViewController()
->>>>>>> 6caeba0ea7ad91dcec7d503e50bace5cbcf3a25c
     }
 }
 
@@ -64,42 +55,6 @@ extension MainTabBarController{
 
 // MARK: - 中间按钮
 extension MainTabBarController{
-<<<<<<< HEAD
-    
-        //添加TabBar中间按钮
-        func addCenterButton(btnimage buttonImage:UIImage,selectedbtnimg selectedimg:UIImage,selector:String,view:UIView){
-            //创建一个自定义按钮
-            let button:UIButton = UIButton(type: UIButtonType.Custom)
-            //button大小为适应图片
-            button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
-            button.setImage(buttonImage, forState: UIControlState.Normal)
-            button.setImage(selectedimg, forState: UIControlState.Selected)
-            //去掉阴影
-            button.adjustsImageWhenDisabled = true;
-            //按钮的代理方法
-            button.addTarget( self, action: Selector(selector), forControlEvents:UIControlEvents.TouchUpInside )
-            //高度差
-            let heightDifference:CGFloat = buttonImage.size.height - self.tabBar.frame.size.height
-            if (heightDifference < 0){
-                button.center = self.tabBar.center;
-            }
-            else
-            {
-                var center:CGPoint = self.tabBar.center;
-                center.y = center.y - heightDifference/2.0;
-                button.center = center;
-            }
-            view.addSubview(button);
-        }
-        
-        //点击按钮触发
-        func addWriteView(){
-            
-            let writeViewController = UIStoryboard(name: "Write", bundle: nil).instantiateViewControllerWithIdentifier("writeViewController")
-            self.presentViewController(writeViewController, animated: true, completion: nil)
-            
-        }
-=======
     /**
      //添加TabBar中间按钮
      
@@ -118,8 +73,6 @@ extension MainTabBarController{
         button.setImage(selectedimg, forState: UIControlState.Selected)
 
         button.adjustsImageWhenDisabled = true  // 设置选中时阴影
->>>>>>> 6caeba0ea7ad91dcec7d503e50bace5cbcf3a25c
-
         button.addTarget(self, action: Selector(selector), forControlEvents:UIControlEvents.TouchUpInside)
     }
         

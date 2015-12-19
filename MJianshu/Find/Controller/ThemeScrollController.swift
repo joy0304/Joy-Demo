@@ -12,6 +12,7 @@ class ThemeScrollController:UIViewController,UIScrollViewDelegate{
     var topScroll: UIScrollView!
     var bottomScroll: UIScrollView!
     var topScrollMaxX:CGFloat = 0
+    let labelGapX: CGFloat = 20
     var topScrollHeight: CGFloat = 40
     let themeArr = ["热门","七日热门","三十日热门","最新","生活家","世间事","@IT","视频","七嘴八舌","电影","经典","连载","读图","市集"]
     
@@ -24,14 +25,18 @@ class ThemeScrollController:UIViewController,UIScrollViewDelegate{
 
     func setTopScroll(){
         
-        topScroll = UIScrollView(frame: CGRectMake(0, 0, ScreenWidth, topScrollHeight))
+        topScroll = UIScrollView()
         topScroll.showsHorizontalScrollIndicator = false
         topScroll.showsVerticalScrollIndicator = false
         topScroll.backgroundColor = UIColor.lightGrayColor()
         view.addSubview(topScroll)
+        topScroll.snp_makeConstraints { (make) -> Void in
+            make.left.right.top.equalTo(view)
+            make.height.equalTo(topScrollHeight)
+        }
         //为其增加label，显示theme名字
         for idx in 0..<themeArr.count{
-            let labelGapX: CGFloat = 20
+
             let label = UILabel(frame: CGRectMake(topScrollMaxX + labelGapX, 10, 10, 10))
             label.text = themeArr[idx]
             label.font = UIFont(name: "HYQiHei", size: 19)
@@ -68,6 +73,10 @@ class ThemeScrollController:UIViewController,UIScrollViewDelegate{
         bottomScroll.bounces = false
         bottomScroll.delegate = self
         view.addSubview(bottomScroll)
+        bottomScroll.snp_makeConstraints { (make) -> Void in
+            make.left.right.bottom.equalTo(view)
+            make.top.equalTo(view).offset(topScrollHeight)
+        }
         
         for i in 0..<themeArr.count {
             let contentController = ContentTableController()
@@ -79,7 +88,8 @@ class ThemeScrollController:UIViewController,UIScrollViewDelegate{
     
     
 }
-//UIScrollViewDelegate方法
+
+// MARK: - 实现UIScrollViewDelegate
 extension ThemeScrollController{
     
     func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {

@@ -22,9 +22,7 @@ class FindViewController: UIViewController, FindViewDelegate {
     }
     
     override func loadView() {
-        let customedView = FindView()
-        customedView.delegate = self
-        view = customedView
+        view = FindView(delegate: self)
     }
     
     override func viewWillAppear(animated: Bool) {

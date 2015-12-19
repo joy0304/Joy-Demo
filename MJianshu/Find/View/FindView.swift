@@ -22,8 +22,9 @@ class FindView: UIView {
     var articleViewController: ThemeScrollController?
     var subjectViewController: ThemeScrollController?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(delegate: FindViewDelegate) {
+        super.init(frame: CGRectNull)
+        self.delegate = delegate
         setContainerScrollView()
         setSegmentView()
     }
@@ -35,42 +36,44 @@ class FindView: UIView {
     func setContainerScrollView() {
         addSubview(containerScrollView)
         containerScrollView.snp_makeConstraints { (make) -> Void in
-            make.left.right.top.equalTo(self).offset(0)
+            make.left.right.top.equalTo(self)
             make.bottom.equalTo(self).offset(-globalTabbarHeight)
         }
         
         articleViewController = ThemeScrollController()
         containerScrollView.addSubview((articleViewController?.view)!)
-        
+        articleViewController?.view.backgroundColor = UIColor.brownColor()
         articleViewController?.view?.snp_makeConstraints(closure: { (make) -> Void in
-            make.top.left.right.equalTo(self)
+            make.top.left.equalTo(0)
+            make.right.equalTo(self)
             make.bottom.equalTo(self).offset(-globalTabbarHeight)
         })
         
         subjectViewController = ThemeScrollController()
+        subjectViewController?.view.backgroundColor = UIColor.orangeColor()
         containerScrollView.addSubview((subjectViewController?.view)!)
         subjectViewController?.view?.snp_makeConstraints(closure: { (make) -> Void in
-            make.left.equalTo(ScreenWidth)
-            make.width.equalTo(ScreenWidth)
-            make.bottom.equalTo(self).offset(-globalTabbarHeight)
-            make.top.equalTo(self)
+            make.left.equalTo((articleViewController?.view)!).offset(ScreenWidth)
+            make.top.width.bottom.equalTo((articleViewController?.view)!)
         })
     }
     
     func setSegmentView(){
-        
         if let items = delegate?.segmentTitleArray() {
             segmentView = UISegmentedControl(items: items)
+            segmentView.setWidth(segmentItemWidth, forSegmentAtIndex: 0)
+            segmentView.setWidth(segmentItemWidth, forSegmentAtIndex: 1)
+            
+            segmentView.selectedSegmentIndex = 0
+            segmentView.addTarget(self, action: "segmentValueChanged", forControlEvents: UIControlEvents.ValueChanged)
         }
-        
-        segmentView.setWidth(segmentItemWidth, forSegmentAtIndex: 0)
-        segmentView.setWidth(segmentItemWidth, forSegmentAtIndex: 1)
-        
-        segmentView.selectedSegmentIndex = 0
-        segmentView.addTarget(self, action: "segmentValueChanged", forControlEvents: UIControlEvents.ValueChanged)
     }
     
     func segmentValueChanged() {
         delegate?.segmentValueChanged()
+    }
+    
+    deinit{
+        print("销毁")
     }
 }

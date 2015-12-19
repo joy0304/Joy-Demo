@@ -12,8 +12,11 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //添加所有子控制器
         addAllChildViewController()
+        
+        
         
     }
 }
@@ -51,8 +54,7 @@ extension MainTabBarController{
 extension MainTabBarController{
     
         //添加TabBar中间按钮
-        func addCenterButton(btnimage buttonImage:UIImage,selectedbtnimg selectedimg:UIImage,selector:String,view:UIView)
-        {
+        func addCenterButton(btnimage buttonImage:UIImage,selectedbtnimg selectedimg:UIImage,selector:String,view:UIView){
             //创建一个自定义按钮
             let button:UIButton = UIButton(type: UIButtonType.Custom)
             //button大小为适应图片

@@ -18,8 +18,8 @@ class FindViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-
         setSegmentView()
+
     }
 }
 //设置导航栏的segmentView

@@ -19,6 +19,7 @@
 		1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F951C1FAFE80089542C /* CommonData.swift */; };
 		1B6E9F981C1FB2580089542C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F971C1FB2580089542C /* WriteViewController.swift */; };
 		1B6E9FA21C1FBB270089542C /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9FA11C1FBB270089542C /* Write.storyboard */; };
+		1BE2833F1C25B57E002ACA49 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2833E1C25B57E002ACA49 /* ThemeView.swift */; };
 		9B550E5F1C256DE200217258 /* ContentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5C1C256DE200217258 /* ContentTableController.swift */; };
 		9B550E601C256DE200217258 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5D1C256DE200217258 /* FindViewController.swift */; };
 		9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5E1C256DE200217258 /* ThemeScrollController.swift */; };
@@ -45,6 +46,7 @@
 		1B6E9F951C1FAFE80089542C /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		1B6E9F971C1FB2580089542C /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		1B6E9FA11C1FBB270089542C /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
+		1BE2833E1C25B57E002ACA49 /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		9B550E5C1C256DE200217258 /* ContentTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableController.swift; sourceTree = "<group>"; };
 		9B550E5D1C256DE200217258 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		9B550E5E1C256DE200217258 /* ThemeScrollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeScrollController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				9B550E651C256E2500217258 /* FindView.swift */,
+				1BE2833E1C25B57E002ACA49 /* ThemeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				1B6E9F731C1F9E240089542C /* AppDelegate.swift in Sources */,
 				1B6E9F901C1FADAE0089542C /* FollowViewController.swift in Sources */,
 				1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */,
+				1BE2833F1C25B57E002ACA49 /* ThemeView.swift in Sources */,
 				1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */,
 				9B550E601C256DE200217258 /* FindViewController.swift in Sources */,
 				9B550E691C25740600217258 /* FindViewModel.swift in Sources */,

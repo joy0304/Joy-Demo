@@ -21,17 +21,17 @@ class MainTabBarController: UITabBarController {
 extension MainTabBarController{
     func addAllChildViewController(){
         // 主页
-        addChildVC(FindViewController(), title: "发现", image: "recommendation_1", selected: "recommendation_2")
+        addChildVC(FindViewController(), title: "发现", image: "icon_tabbar_home", selected: "icon_tabbar_home_active")
         // 关注
-        addChildVC(FollowViewController(), title: "关注", image: "classification_1", selected: "classification_2")
+        addChildVC(FollowViewController(), title: "关注", image: "icon_tabbar_subscription", selected: "icon_tabbar_subscription_active")
         //先设置一个空视图，确保tabbar被五等分
         addChildViewController(UIViewController())
         // 简友
-        addChildVC(FriendsViewController(), title: "简友圈", image: "broadwood_1", selected: "broadwood_2")
+        addChildVC(FriendsViewController(), title: "简友圈", image: "icon_tabbar_activity", selected: "icon_tabbar_activity_active")
         // 我的
-        addChildVC(MyViewController(), title: "我的", image: "my_1", selected: "my_2")
+        addChildVC(MyViewController(), title: "我的", image: "icon_tabbar_me", selected: "icon_tabbar_me_active")
         // 添加中间按钮
-        addCenterButton(btnImage: UIImage(named: "collect_2")!, selectedImg: UIImage(named: "collect_2")!, selector: "writeArticleButtonClicked", view: view)
+        addCenterButton(btnImage: UIImage(named: "button_write")!, selectedImg: UIImage(named: "button_write")!, selector: "writeArticleButtonClicked", view: view)
     }
     
     /**
@@ -43,10 +43,13 @@ extension MainTabBarController{
      :param: selected tabbar item的选中状态下图片的名称
      */
     func addChildVC(childVC: UIViewController, title: String?, image: String, selected: String) {
-        childVC.tabBarItem = UITabBarItem(title: title, image: UIImage(named: image), selectedImage: UIImage(named: selected))
-        //设置点击之后的字体颜色
-        tabBar.tintColor = UIColor.blackColor()
-        //设置导航控制器
+        childVC.tabBarItem.title = title
+        childVC.tabBarItem.image = UIImage(named: image)
+        childVC.tabBarItem.selectedImage = UIImage(named: selected)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        // 设置点击之后字体的颜色
+        childVC.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orangeColor()], forState:UIControlState.Selected)
+        
+        // 设置导航控制器
         let childNaviagation = UINavigationController(rootViewController: childVC)
         addChildViewController(childNaviagation)
     }

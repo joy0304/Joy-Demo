@@ -36,7 +36,7 @@ class ThemeView: UIView {
         themeArr = labelTitleArray()
         
         setTopScroll()
-//        setBottomScroll()
+        setBottomScroll()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -114,41 +114,22 @@ class ThemeView: UIView {
             make.bottom.equalTo(self)
             make.top.equalTo(self).offset(topScrollHeight)
         }
-
-        for i in 0..<themeArr.count {
-            let contentController = ContentTableController()
-            bottomContainerView.addSubview(contentController.view)
-            
-            contentController.view.snp_makeConstraints(closure: { (make) -> Void in
-                make.top.height.equalTo(bottomContainerView)
-                make.width.equalTo(ScreenWidth)
-                if i > 0, let previousView = bottomScroll.subviews[0].subviews[i - 1] as? UIView {
-                    make.left.equalTo(previousView.snp_right)
-                } else {
-                    make.left.equalTo(0)
-                }
-            })
-            
-            rightConstraint?.uninstall()
-            bottomContainerView.snp_makeConstraints(closure: { (make) -> Void in
-                rightConstraint = make.right.equalTo(contentController.view).constraint
-            })
-            contentController.addButton(themeArr[i])
-        }
     }
 }
 
 extension ThemeView {
     func addBottomViews(view: UIView) {
-        let contentController = ContentTableController()
         bottomContainerView.addSubview(view)
         
-        contentController.view.snp_makeConstraints(closure: { (make) -> Void in
+        view.snp_makeConstraints(closure: { (make) -> Void in
             make.top.height.equalTo(bottomContainerView)
             make.width.equalTo(ScreenWidth)
-            if bottomContainerView.subviews[0].subviews.count > 1 {
-                let previousView = bottomScroll.subviews[0].subviews[bottomContainerView.subviews[0].subviews.count - 2] as! UIView
+            if bottomContainerView.subviews.count > 1 {
+                let previousView = bottomScroll.subviews[0].subviews[bottomContainerView.subviews.count - 2] as! UIView
                 make.left.equalTo(previousView.snp_right)
+                print(view)
+                print(previousView)
+                print("")
             }
             else {
                 make.left.equalTo(0)
@@ -157,7 +138,7 @@ extension ThemeView {
         
         rightConstraint?.uninstall()
         bottomContainerView.snp_makeConstraints(closure: { (make) -> Void in
-            rightConstraint = make.right.equalTo(contentController.view).constraint
+            rightConstraint = make.right.equalTo(view).constraint
         })
     }
 }

@@ -14,7 +14,8 @@ class ThemeScrollController: UIViewController, ThemeDelegate{
     var currentPage = 0
     var themeView: ThemeView!
     var type: ThemeScrollViewType?
-    var themeDataModel: ThemeScrollViewModel! = ThemeScrollViewModel()
+    var contentViewControllers: Array<ContentTableController> = []
+    lazy var themeDataModel: ThemeScrollViewModel = ThemeScrollViewModel()
     
     init(type: ThemeScrollViewType) {
         super.init(nibName: nil, bundle: nil)
@@ -27,24 +28,19 @@ class ThemeScrollController: UIViewController, ThemeDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let view = view as? ThemeView {
-            view.setBottomScroll()
-        }
+        addContentViewControllers()
     }
     
     override func loadView() {
         view = ThemeView(delegate: self)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        print("will appear")
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("will disappear")
+    func addContentViewControllers() {
+        for i in (labelTitleArray()?.indices)! {
+            let contentVC = ContentTableController()
+            self.addChildViewController(contentVC)
+            (view as! ThemeView).addBottomViews(contentVC.view)
+        }
     }
 }
 

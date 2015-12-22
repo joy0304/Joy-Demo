@@ -7,30 +7,36 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol ThemeDelegate:UIScrollViewDelegate{
     func labelClicked(recognizer: UITapGestureRecognizer)
-    func labelTitleArray() -> [String]
+    func labelTitleArray() -> [String]?
 }
 
-class ThemeView: UIView {
+private let topScrollHeight: CGFloat = 40.0
 
+class ThemeView: UIView {
+    let labelGapX: CGFloat = 15.0
+    var rightConstraint: Constraint?
+    
+    var themeArr: Array<String>!
+    
     var topScroll: UIScrollView!
     var bottomScroll: UIScrollView!
-    var topScrollMaxX: CGFloat = 0.0
-    let labelGapX: CGFloat = 15.0
-    var topScrollHeight: CGFloat = 40.0
-    let themeArr = ["热门","七日热门","三十日热门","最新","生活家","世间事","@IT","视频","七嘴八舌","电影","经典","连载","读图","市集"]
+    var topContainerView = UIView()
+    var bottomContainerView = UIView()
     
     weak var delegate: ThemeDelegate?
     
     init(delegate: ThemeDelegate){
-        //空矩形和零矩形 待？
         super.init(frame: CGRectNull)
-        self.delegate = delegate
-        setTopScroll()
-        setBottomScroll()
         
+        self.delegate = delegate
+        themeArr = labelTitleArray()
+        
+        setTopScroll()
+//        setBottomScroll()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -38,20 +44,29 @@ class ThemeView: UIView {
     }
     
     func setTopScroll(){
-
         topScroll = UIScrollView()
         topScroll.showsHorizontalScrollIndicator = false
         topScroll.showsVerticalScrollIndicator = false
         topScroll.backgroundColor = UIColor.lightGrayColor()
         addSubview(topScroll)
+        
         topScroll.snp_makeConstraints { (make) -> Void in
-            make.left.right.top.equalTo(self)
+            make.top.equalTo(0)
+            make.height.equalTo(topScrollHeight)
+            make.left.right.equalTo(self)
+        }
+        
+        topContainerView.backgroundColor = topScroll.backgroundColor
+        topScroll.addSubview(topContainerView)
+        
+        topContainerView.snp_makeConstraints { (make) -> Void in
+            make.edges.equalTo(topScroll)
             make.height.equalTo(topScrollHeight)
         }
+        
         //为其增加label，显示theme名字
         for idx in 0..<themeArr.count{
-
-            let label = UILabel(frame: CGRectMake(topScrollMaxX + labelGapX, 10, 10, 10))
+            let label = UILabel()
             label.text = themeArr[idx]
             label.font = UIFont(name: "HYQiHei", size: 19)
             label.textColor = (idx==0) ? UIColor.purpleColor() : UIColor.blackColor()
@@ -59,44 +74,101 @@ class ThemeView: UIView {
             label.tag = idx
             label.userInteractionEnabled = true
             label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "labelClicked:"))
-            topScroll.addSubview(label)
-            // 记录顶部scroll的X坐标
-            topScrollMaxX = label.frame.maxX + labelGapX
+            topContainerView.addSubview(label)
+            
+            label.snp_makeConstraints(closure: { (make) -> Void in
+                make.height.equalTo(topContainerView)
+                if idx > 0, let previousLabel = topScroll.subviews[0].subviews[idx - 1] as? UILabel {
+                    make.left.equalTo(previousLabel.snp_right).offset(labelGapX * 2)
+                } else {
+                    make.left.equalTo(labelGapX)
+                }
+            })
+            
+            if idx == themeArr.count - 1 {
+                topContainerView.snp_makeConstraints(closure: { (make) -> Void in
+                    make.right.equalTo(label)
+                })
+            }
         }
-
-        //重新计算topScroll contentSize
-        topScroll.contentSize = CGSizeMake(topScrollMaxX, topScrollHeight)
     }
 
 
     func setBottomScroll(){
-
-        bottomScroll = UIScrollView(frame: CGRectMake(0, topScrollHeight, ScreenWidth, ScreenHeight - topScrollHeight))
-        bottomScroll.contentSize = CGSizeMake(ScreenWidth * 8, ScreenHeight - topScrollHeight)
+        bottomScroll = UIScrollView()
         bottomScroll.pagingEnabled = true
-        bottomScroll.clipsToBounds = true
+        bottomScroll.showsHorizontalScrollIndicator = false
         bottomScroll.bounces = false
         bottomScroll.delegate = delegate
         addSubview(bottomScroll)
         bottomScroll.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(topScroll.snp_bottom)
             make.left.right.bottom.equalTo(self)
+        }
+        
+        bottomContainerView.backgroundColor = bottomScroll.backgroundColor
+        bottomScroll.addSubview(bottomContainerView)
+        
+        bottomContainerView.snp_makeConstraints { (make) -> Void in
+            make.edges.equalTo(bottomScroll)
+            make.bottom.equalTo(self)
             make.top.equalTo(self).offset(topScrollHeight)
         }
 
         for i in 0..<themeArr.count {
             let contentController = ContentTableController()
-            let conWidth = ScreenWidth * CGFloat(i)
-            contentController.view.frame = CGRectMake(conWidth, 0, ScreenWidth, ScreenHeight - topScrollHeight)
-            bottomScroll.addSubview(contentController.view)
+            bottomContainerView.addSubview(contentController.view)
+            
+            contentController.view.snp_makeConstraints(closure: { (make) -> Void in
+                make.top.height.equalTo(bottomContainerView)
+                make.width.equalTo(ScreenWidth)
+                if i > 0, let previousView = bottomScroll.subviews[0].subviews[i - 1] as? UIView {
+                    make.left.equalTo(previousView.snp_right)
+                } else {
+                    make.left.equalTo(0)
+                }
+            })
+            
+            rightConstraint?.uninstall()
+            bottomContainerView.snp_makeConstraints(closure: { (make) -> Void in
+                rightConstraint = make.right.equalTo(contentController.view).constraint
+            })
+            contentController.addButton(themeArr[i])
         }
     }
-    
+}
+
+extension ThemeView {
+    func addBottomViews(view: UIView) {
+        let contentController = ContentTableController()
+        bottomContainerView.addSubview(view)
+        
+        contentController.view.snp_makeConstraints(closure: { (make) -> Void in
+            make.top.height.equalTo(bottomContainerView)
+            make.width.equalTo(ScreenWidth)
+            if bottomContainerView.subviews[0].subviews.count > 1 {
+                let previousView = bottomScroll.subviews[0].subviews[bottomContainerView.subviews[0].subviews.count - 2] as! UIView
+                make.left.equalTo(previousView.snp_right)
+            }
+            else {
+                make.left.equalTo(0)
+            }
+        })
+        
+        rightConstraint?.uninstall()
+        bottomContainerView.snp_makeConstraints(closure: { (make) -> Void in
+            rightConstraint = make.right.equalTo(contentController.view).constraint
+        })
+    }
+}
+
+// MARK: - ThemeDelegate协议
+extension ThemeView {
     func labelClicked(recognizer: UITapGestureRecognizer){
         delegate?.labelClicked(recognizer)
     }
-//    
-//    func labelTitleArray() -> [String]{
-//        delegate?.labelTitleArray()
-//    }
- 
+    
+    func labelTitleArray() -> [String]?{
+        return delegate?.labelTitleArray()
+    }
 }

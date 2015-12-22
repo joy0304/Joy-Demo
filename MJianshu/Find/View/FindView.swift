@@ -39,23 +39,6 @@ class FindView: UIView {
             make.left.right.top.equalTo(self)
             make.bottom.equalTo(self).offset(-globalTabbarHeight)
         }
-        
-        articleViewController = ThemeScrollController()
-        containerScrollView.addSubview((articleViewController?.view)!)
-        articleViewController?.view.backgroundColor = UIColor.brownColor()
-        articleViewController?.view?.snp_makeConstraints(closure: { (make) -> Void in
-            make.top.left.equalTo(0)
-            make.right.equalTo(self)
-            make.bottom.equalTo(self).offset(-globalTabbarHeight)
-        })
-        
-        subjectViewController = ThemeScrollController()
-        subjectViewController?.view.backgroundColor = UIColor.orangeColor()
-        containerScrollView.addSubview((subjectViewController?.view)!)
-        subjectViewController?.view?.snp_makeConstraints(closure: { (make) -> Void in
-            make.left.equalTo((articleViewController?.view)!).offset(ScreenWidth)
-            make.top.width.bottom.equalTo((articleViewController?.view)!)
-        })
     }
     
     func setSegmentView(){

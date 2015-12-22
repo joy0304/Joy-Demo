@@ -9,15 +9,39 @@
 import UIKit
 import SnapKit
 
+enum ThemeScrollViewType {
+    case Article
+    case Subject
+}
+
 class FindViewController: UIViewController, FindViewDelegate {
     var dataModel = FindViewModel()
+    
+    lazy var articleViewController: ThemeScrollController = ThemeScrollController(type: .Article)
+    lazy var subjectViewController: ThemeScrollController = ThemeScrollController(type: .Subject)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
 
-        if let localView = view as? FindView {
-            navigationItem.titleView = localView.segmentView
+        if let view = view as? FindView {
+            navigationItem.titleView = view.segmentView
+            
+            self.addChildViewController(articleViewController)
+            self.addChildViewController(subjectViewController)
+            
+            view.containerScrollView.addSubview((articleViewController.view)!)
+            articleViewController.view?.snp_makeConstraints(closure: { (make) -> Void in
+                make.top.left.equalTo(0)
+                make.right.equalTo(view)
+                make.bottom.equalTo(view).offset(-globalTabbarHeight)
+            })
+            
+            view.containerScrollView.addSubview((subjectViewController.view)!)
+            subjectViewController.view?.snp_makeConstraints(closure: { (make) -> Void in
+                make.left.equalTo((articleViewController.view)!).offset(ScreenWidth)
+                make.top.width.bottom.equalTo((articleViewController.view)!)
+            })
         }
     }
     

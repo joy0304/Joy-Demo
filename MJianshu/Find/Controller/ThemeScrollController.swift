@@ -8,74 +8,116 @@
 
 import UIKit
 import SnapKit
-class ThemeScrollController:UIViewController,ThemeDelegate{
 
+class ThemeScrollController: UIViewController, ThemeDelegate{
+    
+    var currentPage = 0
     var themeView: ThemeView!
-    var themeDataModel: ThemeScrollViewModel! = {
-        return ThemeScrollViewModel()
-        
-    }()
+    var type: ThemeScrollViewType?
+    var themeDataModel: ThemeScrollViewModel! = ThemeScrollViewModel()
+    
+    init(type: ThemeScrollViewType) {
+        super.init(nibName: nil, bundle: nil)
+        self.type = type
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        themeView = ThemeView(delegate: self)
-        view.addSubview(themeView)
-        themeView.snp_makeConstraints { (make) -> Void in
-            make.top.bottom.left.right.equalTo(view).offset(0)
+        if let view = view as? ThemeView {
+            view.setBottomScroll()
         }
-        
+    }
+    
+    override func loadView() {
+        view = ThemeView(delegate: self)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("will appear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("will disappear")
     }
 }
-// MARK - 实现themeDelegate，与UIScrollViewDelegate
-extension ThemeScrollController{
+
+// MARK: - 实现themeDelegate协议
+extension ThemeScrollController {
+    func labelTitleArray() -> [String]?{
+        switch type {
+        case .Some(.Article): return themeDataModel.articleViewTitles
+        case .Some(.Subject): return themeDataModel.subjectViewTitles
+        default: return []
+        }
+    }
+    
     func labelClicked(recognizer: UITapGestureRecognizer){
-        
         let titleLabel = recognizer.view
         let offSetX = CGFloat(titleLabel!.tag) * ScreenWidth
         let offset = CGPointMake(offSetX, 0)
-        themeView.bottomScroll.setContentOffset(offset, animated: true)
-        
+        if let view = view as? ThemeView {
+            view.bottomScroll.setContentOffset(offset, animated: true)
+            currentPage = Int(view.bottomScroll.contentOffset.x / ScreenWidth)
+        }
     }
-    
-    func labelTitleArray() -> [String]{
-        return themeDataModel.articleViewTitles
+}
+
+// MARK: - 停止滑动时，更新顶部文字样式
+extension ThemeScrollController {
+    func updateTopScrollViewLabel() {
+        if let view = view as? ThemeView {
+            if let currentLabel = view.topScroll.subviews[0].subviews[currentPage] as? UILabel {
+                currentLabel.transform = CGAffineTransformMakeScale(1,1)
+                currentLabel.textColor = UIColor.blackColor()
+            }
+            currentPage = Int(view.bottomScroll.contentOffset.x / ScreenWidth)
+            if let currentLabel = view.topScroll.subviews[0].subviews[currentPage] as? UILabel {
+                currentLabel.transform = CGAffineTransformMakeScale(1.3,1.3)
+                currentLabel.textColor = UIColor.purpleColor()
+            }
+        }
     }
-    
-    func scrollViewWillBeginDecelerating(scrollView: UIScrollView){
-        
-        scrollViewDidEndScrollingAnimation(scrollView)
-    }
-    
+}
+
+// MARK - 实现UIScrollViewDelegate协议
+extension ThemeScrollController{
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView){
         
         let index = Int(scrollView.contentOffset.x / ScreenWidth)
-        
-        let titleLabel = themeView.topScroll.subviews[index] as! UILabel
-        var offSetX = titleLabel.center.x - themeView.topScroll.frame.size.width * 0.5
-        let offSetMaxX = themeView.topScroll.contentSize.width - themeView.topScroll.frame.size.width
-        if offSetX < 0{
-            offSetX = 0
-        }
-        else if (offSetX > offSetMaxX){
-            offSetX = offSetMaxX
-        }
-        themeView.topScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)
-        
-        for idx in 0..<14{
-            if idx != index{
-                let otherLabel = themeView.topScroll.subviews[idx] as! UILabel
-                otherLabel.transform = CGAffineTransformMakeScale(1,1)
-                otherLabel.textColor = UIColor.blackColor()
+        if let view = view as? ThemeView {
+            let titleLabel = view.topScroll.subviews[0].subviews[index] as! UILabel
+            var offSetX = titleLabel.center.x - view.topScroll.frame.size.width * 0.5
+            let offSetMaxX = view.topScroll.contentSize.width - view.topScroll.frame.size.width
+            if offSetX < 0{
+                offSetX = 0
             }
-            else{
-                titleLabel.transform = CGAffineTransformMakeScale(1.3,1.3)
-                titleLabel.textColor = UIColor.purpleColor()
+            else if (offSetX > offSetMaxX){
+                offSetX = offSetMaxX
             }
-            
+            print(offSetX)
+            view.topScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)
         }
         
+        updateTopScrollViewLabel()
     }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        if let view = view as? ThemeView {
+            currentPage = Int(view.bottomScroll.contentOffset.x / ScreenWidth)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        updateTopScrollViewLabel()
+    }
+}
 
-    }
+
 

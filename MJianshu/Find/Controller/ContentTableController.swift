@@ -19,19 +19,22 @@ class ContentTableController: UIViewController {
         let box = UIView(frame: frame)
         box.backgroundColor = UIColor.redColor()
         view.addSubview(box)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("will appear")
+    }
 
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("will disappear")
+    }
     // MARK: - Table view data source
 
   
@@ -91,4 +94,13 @@ class ContentTableController: UIViewController {
     }
     */
 
+}
+
+extension ContentTableController {
+    func addButton(text: String) {
+        let frame = CGRectMake(100, 100, 100,100)
+        let label = UILabel(frame: frame)
+        label.text = text
+        self.view.addSubview(label)
+    }
 }

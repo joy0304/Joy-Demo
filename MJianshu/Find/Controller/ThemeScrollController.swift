@@ -36,7 +36,7 @@ class ThemeScrollController: UIViewController, ThemeDelegate{
     }
     
     func addContentViewControllers() {
-        for i in (labelTitleArray()?.indices)! {
+        for _ in (labelTitleArray()?.indices)! {
             let contentVC = ContentTableController()
             self.addChildViewController(contentVC)
             (view as! ThemeView).addBottomViews(contentVC.view)
@@ -56,12 +56,15 @@ extension ThemeScrollController {
     
     func labelClicked(recognizer: UITapGestureRecognizer){
         let titleLabel = recognizer.view
-        let offSetX = CGFloat(titleLabel!.tag) * ScreenWidth
-        let offset = CGPointMake(offSetX, 0)
+        let tempOffSetX = CGFloat(titleLabel!.tag-1) * ScreenWidth
         if let view = view as? ThemeView {
-            view.bottomScroll.setContentOffset(offset, animated: true)
+            view.bottomScroll.contentOffset = CGPointMake(tempOffSetX, 0)
+            let offSetX = CGFloat(titleLabel!.tag) * ScreenWidth
+            view.bottomScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)
             currentPage = Int(view.bottomScroll.contentOffset.x / ScreenWidth)
+            print(currentPage)
         }
+        
     }
 }
 
@@ -104,6 +107,10 @@ extension ThemeScrollController{
         updateTopScrollViewLabel()
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+    }
+    
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         if let view = view as? ThemeView {
             currentPage = Int(view.bottomScroll.contentOffset.x / ScreenWidth)
@@ -111,7 +118,8 @@ extension ThemeScrollController{
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        updateTopScrollViewLabel()
+        // updateTopScrollViewLabel()
+        scrollViewDidEndScrollingAnimation(scrollView)
     }
 }
 

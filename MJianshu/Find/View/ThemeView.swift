@@ -125,7 +125,7 @@ extension ThemeView {
             make.top.height.equalTo(bottomContainerView)
             make.width.equalTo(ScreenWidth)
             if bottomContainerView.subviews.count > 1 {
-                let previousView = bottomScroll.subviews[0].subviews[bottomContainerView.subviews.count - 2] as! UIView
+                let previousView = bottomScroll.subviews[0].subviews[bottomContainerView.subviews.count - 2] 
                 make.left.equalTo(previousView.snp_right)
                 print(view)
                 print(previousView)

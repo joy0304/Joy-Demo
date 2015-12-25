@@ -56,13 +56,20 @@ extension ThemeScrollController {
     
     func labelClicked(recognizer: UITapGestureRecognizer){
         let titleLabel = recognizer.view
-        let tempOffSetX = CGFloat(titleLabel!.tag-1) * ScreenWidth
+        var tempOffSetX: CGFloat?
         if let view = view as? ThemeView {
-            view.bottomScroll.contentOffset = CGPointMake(tempOffSetX, 0)
+            currentPage = Int(view.bottomScroll.contentOffset.x / ScreenWidth)
+            if currentPage > titleLabel?.tag{
+                tempOffSetX = CGFloat(titleLabel!.tag+1) * ScreenWidth
+            }
+            else{
+                tempOffSetX = CGFloat(titleLabel!.tag-1) * ScreenWidth
+
+            }
+            view.bottomScroll.contentOffset = CGPointMake(tempOffSetX!, 0)
             let offSetX = CGFloat(titleLabel!.tag) * ScreenWidth
             view.bottomScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)
-            currentPage = Int(view.bottomScroll.contentOffset.x / ScreenWidth)
-            print(currentPage)
+
         }
         
     }
@@ -100,7 +107,6 @@ extension ThemeScrollController{
             else if (offSetX > offSetMaxX){
                 offSetX = offSetMaxX
             }
-            print(offSetX)
             view.topScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)
         }
         

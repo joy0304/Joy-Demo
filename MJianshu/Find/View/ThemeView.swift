@@ -127,9 +127,6 @@ extension ThemeView {
             if bottomContainerView.subviews.count > 1 {
                 let previousView = bottomScroll.subviews[0].subviews[bottomContainerView.subviews.count - 2] 
                 make.left.equalTo(previousView.snp_right)
-                print(view)
-                print(previousView)
-                print("")
             }
             else {
                 make.left.equalTo(0)

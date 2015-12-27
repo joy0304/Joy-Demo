@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //显示窗口
         window?.makeKeyAndVisible()
         
+        //应用都有自己的 appId 和客户端密钥,来初始化
+        AVOSCloud.setApplicationId("BekcN0mi38a55uRfqBLzUB0g-gzGzoHsz", clientKey: "uxBvf6VfMqr0UofcnvEdVdYK")
+    
         return true
     }
 

@@ -1,10 +1,19 @@
 PODS:
+  - AVOSCloud (3.1.7.1)
+  - MJExtension (3.0.8)
   - SnapKit (0.17.0)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - AVOSCloud
+  - MJExtension
   - SnapKit (~> 0.17.0)
+  - SwiftyJSON (~> 2.3.1)
 
 SPEC CHECKSUMS:
+  AVOSCloud: 142b7cef3c0bc059dfb73739e02cf9487e65ff66
+  MJExtension: 12d2875959b4a0f936ae86b22a1eb6b0251c50ba
   SnapKit: 49fd7b1b3ff58ab4064004036b8afcfddbd3a4bd
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

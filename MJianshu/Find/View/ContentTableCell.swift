@@ -10,13 +10,20 @@ import UIKit
 import SnapKit
 class ContentTableCell: UITableViewCell {
     
-    var userButton: UIButton!
+    var userLable: UILabel!
+    var timeLabel: UILabel!
     var previewImage: UIImageView!
     var articleTitle: UILabel!
-    var readNumLabel: UILabel!
-    
+    var readLabel: UILabel!
+    var readNumber: Int!
+    var commentLabel: UILabel!
+    var commentNumber: Int!
+    var favorLabel: UILabel!
+    var favorNumber : Int!
+    // 数据需要更改
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "contentCell")
+        
         setSubviews()
     }
 
@@ -29,13 +36,14 @@ class ContentTableCell: UITableViewCell {
         addSubview(previewImage)
         previewImage.snp_makeConstraints { (make) -> Void in
             make.width.height.equalTo(80)
-            make.right.bottom.equalTo(self).offset(-10)
-            make.top.equalTo(self).offset(10)
+            make.right.bottom.equalTo(self).offset(-15)
+            make.top.equalTo(self).offset(15)
         }
         
         articleTitle = UILabel()
         articleTitle.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        articleTitle.numberOfLines = 0
+        articleTitle.font = UIFont.systemFontOfSize(18)
+        articleTitle.numberOfLines = 2
         addSubview(articleTitle)
         
         articleTitle?.snp_makeConstraints(closure: { (make) -> Void in
@@ -44,28 +52,55 @@ class ContentTableCell: UITableViewCell {
             make.left.equalTo(self).offset(10)
         })
         
-        userButton = UIButton()
-        userButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
-        userButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        addSubview(userButton!)
+        userLable = UILabel()
+        userLable.font = UIFont.systemFontOfSize(12)
+        userLable.textColor = UIColor.blueColor()
+        userLable.sizeToFit()
+        addSubview(userLable!)
 
-        userButton?.snp_makeConstraints(closure: { (make) -> Void in
+        userLable?.snp_makeConstraints(closure: { (make) -> Void in
             make.left.equalTo(self).offset(10)
-            make.bottom.equalTo(articleTitle.snp_top).offset(-10)
-            make.height.equalTo(20)
-            make.width.equalTo(100)
+            make.bottom.equalTo(articleTitle.snp_top).offset(-8)
         })
 
-        readNumLabel = UILabel()
-        addSubview(readNumLabel)
-
-        readNumLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(articleTitle.snp_bottom).offset(10)
-            make.left.equalTo(self).offset(10)
-            make.height.equalTo(20)
-            make.width.equalTo(100)
-
+        timeLabel = UILabel()
+        setLabelAttribute(timeLabel)
+        timeLabel.snp_makeConstraints { (make) -> Void in
+            make.left.equalTo(userLable.snp_right).offset(3)
+            make.bottom.equalTo(userLable)
         }
+        
+        readLabel = UILabel()
+        readLabel.text = "阅读 " + String(readNumber)
+        setLabelAttribute(readLabel)
+        readLabel.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(articleTitle.snp_bottom).offset(8)
+            make.left.equalTo(self).offset(10)
+        }
+        
+        commentLabel = UILabel()
+        setLabelAttribute(commentLabel)
+        commentLabel.text = "● 评论 " + String(commentNumber)
+        commentLabel.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(readLabel)
+            make.left.equalTo(readLabel.snp_right).offset(3)
+        }
+ 
+        favorLabel = UILabel()
+        setLabelAttribute(favorLabel)
+        favorLabel.text = "● 喜欢 " + String(favorNumber)
+        favorLabel.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(commentLabel)
+            make.left.equalTo(commentLabel.snp_right).offset(3)
+        }
+        
+    }
+    
+    func setLabelAttribute(label: UILabel){
+        label.font = UIFont.systemFontOfSize(12)
+        label.textColor = UIColor.grayColor()
+        label.sizeToFit()
+        addSubview(label)
     }
     
 }

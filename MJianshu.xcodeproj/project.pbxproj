@@ -21,6 +21,7 @@
 		1B6E9FA21C1FBB270089542C /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9FA11C1FBB270089542C /* Write.storyboard */; };
 		1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */; };
 		1BE2833F1C25B57E002ACA49 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2833E1C25B57E002ACA49 /* ThemeView.swift */; };
+		1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */; };
 		9B550E5F1C256DE200217258 /* ContentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5C1C256DE200217258 /* ContentTableController.swift */; };
 		9B550E601C256DE200217258 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5D1C256DE200217258 /* FindViewController.swift */; };
 		9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5E1C256DE200217258 /* ThemeScrollController.swift */; };
@@ -47,8 +48,11 @@
 		1B6E9F951C1FAFE80089542C /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		1B6E9F971C1FB2580089542C /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		1B6E9FA11C1FBB270089542C /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
+		1BB020E41C3004B00000D69B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableCell.swift; sourceTree = "<group>"; };
 		1BE2833E1C25B57E002ACA49 /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableModel.swift; sourceTree = "<group>"; };
+		1BF2EFAC1C2EB95800AB38FA /* MJianshu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MJianshu-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B550E5C1C256DE200217258 /* ContentTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableController.swift; sourceTree = "<group>"; };
 		9B550E5D1C256DE200217258 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		9B550E5E1C256DE200217258 /* ThemeScrollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeScrollController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 		1B6E9F661C1F9E240089542C = {
 			isa = PBXGroup;
 			children = (
+				1BB020E41C3004B00000D69B /* MyPlayground.playground */,
 				1B58279D1C20584200CBEC82 /* Podfile */,
 				1B6E9F711C1F9E240089542C /* MJianshu */,
 				1B6E9F701C1F9E240089542C /* Products */,
@@ -194,6 +199,7 @@
 			children = (
 				1B6E9F7C1C1F9E240089542C /* Assets.xcassets */,
 				1B6E9F791C1F9E240089542C /* MJianshu.xcdatamodeld */,
+				1BF2EFAC1C2EB95800AB38FA /* MJianshu-Bridging-Header.h */,
 				1B6E9F811C1F9E240089542C /* Info.plist */,
 				1B6E9F7E1C1F9E240089542C /* LaunchScreen.storyboard */,
 			);
@@ -235,6 +241,7 @@
 			children = (
 				9B550E681C25740600217258 /* FindViewModel.swift */,
 				9B550E6A1C2579F700217258 /* ThemeScrollViewModel.swift */,
+				1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */,
 			);
 			path = Mode;
 			sourceTree = "<group>";
@@ -293,7 +300,7 @@
 		1B6E9F671C1F9E240089542C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Martin;
 				TargetAttributes = {
@@ -400,6 +407,7 @@
 				1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */,
 				9B550E601C256DE200217258 /* FindViewController.swift in Sources */,
 				9B550E691C25740600217258 /* FindViewModel.swift in Sources */,
+				1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */,
 				9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */,
 				1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */,
 				1B6E9F921C1FADF60089542C /* FriendsViewController.swift in Sources */,
@@ -508,6 +516,7 @@
 			baseConfigurationReference = AED33F99691306BFD43AE82F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MJianshu/Info.plist;
@@ -516,7 +525,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Martinwjl.MJianshu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OBJC_BRIDGING_HEADER = "MJianshu/MJianshu-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -525,6 +536,7 @@
 			baseConfigurationReference = 03589F9F6EDFE73BB3C1C2E3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MJianshu/Info.plist;
@@ -533,7 +545,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Martinwjl.MJianshu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OBJC_BRIDGING_HEADER = "MJianshu/MJianshu-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

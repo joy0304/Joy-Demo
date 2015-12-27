@@ -1,16 +1,13 @@
 //
 //  AVFile.h
-//  LeanCloud
+//  AVOS Cloud
 //
 
 #import <Foundation/Foundation.h>
 #import "AVConstants.h"
-#import "AVACL.h"
-
-@class AVFileQuery;
 
 /*!
- A file of binary data stored on the LeanCloud servers. This can be a image, video, or anything else
+ A file of binary data stored on the AVOS Cloud servers. This can be a image, video, or anything else
  that an application needs to reference in a non-relational way.
  */
 @interface AVFile : NSObject
@@ -44,22 +41,15 @@
 /*!
  Creates a file with the contents of another file.
  @param name The name of the new AVFile
- @param path The path to the file that will be uploaded to LeanCloud
+ @param path The path to the file that will be uploaded to AVOS Cloud
  */
 + (instancetype)fileWithName:(NSString *)name
     contentsAtPath:(NSString *)path;
 
 /*!
- Creates a file with an AVObject. 
- @param object an AVObject.
- @return an AVFile.
- */
-+ (instancetype)fileWithAVObject:(AVObject *)object;
-
-/*!
 The name of the file.
  */
-@property (nonatomic, readonly, copy) NSString *name;
+@property (readonly) NSString *name;
 
 /*!
  The id of the file.
@@ -75,9 +65,9 @@ The name of the file.
 /*!
  The Qiniu bucket of the file.
  */
-@property (nonatomic, readonly, copy) NSString *bucket;
+@property (readonly) NSString *bucket;
 
-/** @name Storing Data with LeanCloud */
+/** @name Storing Data with AVOS Cloud */
 
 /*!
  Whether the file has been uploaded for the first time.
@@ -92,11 +82,6 @@ The name of the file.
  File metadata, caller is able to store additional values here.
  */
 @property (readwrite, strong) NSMutableDictionary * metaData;
-
-/*!
- *  The access control list  for this file.
- */
-@property (nonatomic, strong) AVACL *ACL;
 
 /*!
  Saves the file.
@@ -139,7 +124,7 @@ The name of the file.
  */
 - (void)saveInBackgroundWithTarget:(id)target selector:(SEL)selector;
 
-/** @name Getting Data from LeanCloud */
+/** @name Getting Data from AVOS Cloud */
 
 /*!
  Whether the data is available in memory or needs to be downloaded.
@@ -147,7 +132,7 @@ The name of the file.
 @property (readonly) BOOL isDataAvailable;
 
 /*!
- Gets the data from cache if available or fetches its contents from the LeanCloud
+ Gets the data from cache if available or fetches its contents from the AVOS Cloud
  servers.
  @return The data. Returns nil if there was an error in fetching.
  */
@@ -163,7 +148,7 @@ The name of the file.
 - (NSInputStream *)getDataStream;
 
 /*!
- Gets the data from cache if available or fetches its contents from the LeanCloud
+ Gets the data from cache if available or fetches its contents from the AVOS Cloud
  servers. Sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
  @return The data. Returns nil if there was an error in fetching.
@@ -182,7 +167,7 @@ The name of the file.
 
 /*!
  Asynchronously gets the data from cache if available or fetches its contents 
- from the LeanCloud servers. Executes the given block.
+ from the AVOS Cloud servers. Executes the given block.
  @param block The block should have the following argument signature: (NSData *result, NSError *error)
  */
 - (void)getDataInBackgroundWithBlock:(AVDataResultBlock)block;
@@ -197,7 +182,7 @@ The name of the file.
 
 /*!
  Asynchronously gets the data from cache if available or fetches its contents 
- from the LeanCloud servers. Executes the resultBlock upon
+ from the AVOS Cloud servers. Executes the resultBlock upon
  completion or error. Executes the progressBlock periodically with the percent progress. progressBlock will get called with 100 before resultBlock is called.
  @param resultBlock The block should have the following argument signature: (NSData *result, NSError *error)
  @param progressBlock The block should have the following argument signature: (int percentDone)
@@ -217,7 +202,7 @@ The name of the file.
 
 /*!
  Asynchronously gets the data from cache if available or fetches its contents 
- from the LeanCloud servers.
+ from the AVOS Cloud servers.
  @param target The object to call selector on.
  @param selector The selector to call. It should have the following signature: (void)callbackWithResult:(NSData *)result error:(NSError *)error. error will be nil on success and set if there was an error.
  */
@@ -279,11 +264,6 @@ The name of the file.
                width:(int)width
               height:(int)height
            withBlock:(AVImageResultBlock)block;
-
-/*!
- Create an AVFileQuery which returns files.
- */
-+ (AVFileQuery *)query;
 
 /*!
  Sets a owner id to metadata.

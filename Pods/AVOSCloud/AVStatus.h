@@ -78,25 +78,6 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
 +(void)deleteStatusWithID:(NSString*)objectId andCallback:(AVBooleanResultBlock)callback;
 
 /**
- * 删除收件箱中的状态
- *
- * @param messageId 状态的 messageId
- * @param inboxType 收件箱类型
- * @param receiver  收件人的 objectId
- */
-+ (BOOL)deleteInboxStatusForMessageId:(NSUInteger)messageId inboxType:(NSString *)inboxType receiver:(NSString *)receiver error:(NSError **)error;
-
-/**
- * 删除收件箱中的状态，异步执行
- *
- * @param messageId 状态的 messageId
- * @param inboxType 收件箱类型
- * @param receiver  收件人的 objectId
- * @param block     回调 block
- */
-+ (void)deleteInboxStatusInBackgroundForMessageId:(NSUInteger)messageId inboxType:(NSString *)inboxType receiver:(NSString *)receiver block:(AVBooleanResultBlock)block;
-
-/**
  *  设置受众群体
  *
  *  @param query 限定条件

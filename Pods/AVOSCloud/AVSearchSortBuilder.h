@@ -32,14 +32,14 @@
 - (void)orderByAscending:(NSString *)key withMode:(NSString *)mode andMissing:(NSString *)missing;
 
 /*!
- *  @see orderByAscending:withMode:andMissing:
+ *  @see orderByAscending:withMode:andMissing
  *  @param key
  *  @param mode
  */
 - (void)orderByAscending:(NSString *)key withMode:(NSString *)mode;
 
 /*!
- *  @see orderByAscending:withMode:andMissing:
+ *  @see orderByAscending:withMode:andMissing
  *  @param key
  */
 - (void)orderByAscending:(NSString *)key;
@@ -54,14 +54,14 @@
 - (void)orderByDescending:(NSString *)key withMode:(NSString *)mode andMissing:(NSString *)missing;
 
 /*!
- *  @see orderByDescending:withMode:andMissing:
+ *  @see orderByDescending:withMode:andMissing
  *  @param key
  *  @param mode
  */
 - (void)orderByDescending:(NSString *)key withMode:(NSString *)mode;
 
 /*!
- *  @see orderByDescending:withMode:andMissing:
+ *  @see orderByDescending:withMode:andMissing
  *  @param key
  */
 - (void)orderByDescending:(NSString *)key;

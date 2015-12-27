@@ -12,48 +12,20 @@ FOUNDATION_EXPORT double AVOSCloudVersionNumber;
 //! Project version string for AVOSCloud.
 FOUNDATION_EXPORT const unsigned char AVOSCloudVersionString[];
 
+// Version
+#define AVOSCLOUD_VERSION @"1.0.0"
+
+extern NSInteger const AVOSCLOUD_API_VERSION;
+
 // Platform
-#define AVOS_IOS_ONLY (TARGET_OS_IPHONE)
-#define AVOS_OSX_ONLY (TARGET_OS_MAC && !TARGET_OS_IPHONE)
+#define PARSE_IOS_ONLY (TARGET_OS_IPHONE)
+#define PARSE_OSX_ONLY (TARGET_OS_MAC && !(TARGET_OS_IPHONE))
 
-#define AVOS_TARGET_OS_OSX (TARGET_OS_MAC && !TARGET_OS_IOS && !TARGET_OS_WATCH && !TARGET_OS_TV)
-#define AVOS_TARGET_OS_IOS (TARGET_OS_IOS && !TARGET_OS_WATCH && !TARGET_OS_TV)
+extern NSString *const kPFDeviceType;
 
-#ifndef AV_IOS_UNAVAILABLE
-#  ifdef __IOS_UNAVILABLE
-#    define AV_IOS_UNAVAILABLE __IOS_UNAVAILABLE
-#  else
-#    define AV_IOS_UNAVAILABLE
-#  endif
-#endif
-
-#ifndef AV_OSX_UNAVAILABLE
-#  if TARGET_OS_MAC
-#    define AV_OSX_UNAVAILABLE __OSX_UNAVAILABLE
-#  else
-#    define AV_OSX_UNAVAILABLE
-#  endif
-#endif
-
-#ifndef AV_WATCH_UNAVAILABLE
-#  ifdef __WATCHOS_UNAVAILABLE
-#    define AV_WATCH_UNAVAILABLE __WATCHOS_UNAVAILABLE
-#  else
-#    define AV_WATCH_UNAVAILABLE
-#  endif
-#endif
-
-#ifndef AV_TV_UNAVAILABLE
-#  ifdef __TVOS_PROHIBITED
-#    define AV_TV_UNAVAILABLE __TVOS_PROHIBITED
-#  else
-#    define AV_TV_UNAVAILABLE
-#  endif
-#endif
-
-#if AVOS_IOS_ONLY
+#if PARSE_IOS_ONLY
 #import <UIKit/UIKit.h>
-#elif AVOS_OSX_ONLY
+#else
 #import <Cocoa/Cocoa.h>
 @compatibility_alias UIImage NSImage;
 @compatibility_alias UIColor NSColor;
@@ -71,23 +43,23 @@ typedef enum : NSUInteger {
 #define kAVVerboseAuto kAVVerboseNone
 #endif
 /// Cache policies
-typedef NS_ENUM(int, AVCachePolicy) {
-    /// Query from server and do not save result to the local cache.
+typedef NS_ENUM(int, AVCachePolicy){
+    ///Ignore Cache
     kAVCachePolicyIgnoreCache = 0,
     
-    /// Only query from the local cache.
+    ///Cache Only
     kAVCachePolicyCacheOnly,
     
-    /// Only query from server, and save result to the local cache.
+    ///Network Only
     kAVCachePolicyNetworkOnly,
     
-    /// Firstly query from the local cache, if fails, query from server.
+    ///CacheElseNetwork
     kAVCachePolicyCacheElseNetwork,
     
-    /// Firstly query from server, if fails, query the local cache.
+    ///NetworkElseCache
     kAVCachePolicyNetworkElseCache,
     
-    /// Firstly query from the local cache, return result. Then query from server, return result. The callback will be called twice.
+    ///CacheThenNetwork
     kAVCachePolicyCacheThenNetwork,
 } ;
 
@@ -184,6 +156,8 @@ extern NSInteger const kAVErrorUserWithEmailNotFound;
 extern NSInteger const kAVErrorUserCannotBeAlteredWithoutSession;
 /*! @abstract 207: Users can only be created through sign up */
 extern NSInteger const kAVErrorUserCanOnlyBeCreatedThroughSignUp;
+/*! @abstract 208: An existing Facebook account already linked to another user. */
+extern NSInteger const kAVErrorFacebookAccountAlreadyLinked;
 /*! @abstract 208: An existing account already linked to another user. */
 extern NSInteger const kAVErrorAccountAlreadyLinked;
 /*! @abstract 209: User ID mismatch */
@@ -192,8 +166,12 @@ extern NSInteger const kAVErrorUserIdMismatch;
 extern NSInteger const kAVErrorUsernamePasswordMismatch;
 /*! @abstract 211: Could not find user. */
 extern NSInteger const kAVErrorUserNotFound;
+/*! @abstract 250: Facebook id missing from request */
+extern NSInteger const kAVErrorFacebookIdMissing;
 /*! @abstract 250: Linked id missing from request */
 extern NSInteger const kAVErrorLinkedIdMissing;
+/*! @abstract 251: Invalid Facebook session */
+extern NSInteger const kAVErrorFacebookInvalidSession;
 /*! @abstract 251: Invalid linked session */
 extern NSInteger const kAVErrorInvalidLinkedSession;
 

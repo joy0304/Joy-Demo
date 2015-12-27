@@ -1,9 +1,10 @@
 //
 //  AVPush.h
-//  LeanCloud
+//  AVOS Cloud
 //
 
 #import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "AVConstants.h"
 #import "AVQuery.h"
 
@@ -18,20 +19,16 @@ extern NSString *const kAVPushTargetPlatformWindowsPhone;
  The preferred way of modifying or retrieving channel subscriptions is to use
  the AVInstallation class, instead of the class methods in AVPush.
 
- This class is currently for iOS only. LeanCloud does not handle Push Notifications
- to LeanCloud applications running on OS X. Push Notifications can be sent from OS X
+ This class is currently for iOS only. AVOS Cloud does not handle Push Notifications
+ to AVOS Cloud applications running on OS X. Push Notifications can be sent from OS X
  applications via Cloud Code or the REST API to push-enabled devices (e.g. iOS
  or Android).
  */
 @interface AVPush : NSObject
 
 /*! @name Creating a Push Notification */
-
-/**
- *  创建一个 AVPush 对象
- *  @return AVPush 对象
- */
 + (instancetype)push;
+
 /**
  *  Set call what production mode's cloud code
  *
@@ -130,7 +127,7 @@ extern NSString *const kAVPushTargetPlatformWindowsPhone;
  Sets the time interval after which this notification should expire.
  This notification will be sent to devices which are either online at
  the time the notification is sent, or which come online within the given
- time interval of the notification being received by LeanCloud server.
+ time interval of the notification being received by AVOS Cloud server.
  An interval which is less than or equal to zero indicates that the
  message should only be sent to devices which are currently online.
  @param timeInterval The interval after which the notification should expire.

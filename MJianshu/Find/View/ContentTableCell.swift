@@ -74,29 +74,25 @@ class ContentTableCell: UITableViewCell {
             make.bottom.equalTo(articleTitle.snp_top).offset(-8)
         })
 
-        timeLabel = UILabel()
-        setLabelAttribute(timeLabel)
+        timeLabel = getAttributeedLabel()
         timeLabel.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(userLable.snp_right).offset(3)
             make.bottom.equalTo(userLable)
         }
         
-        readLabel = UILabel()
-        setLabelAttribute(readLabel)
+        readLabel = getAttributeedLabel()
         readLabel.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(articleTitle.snp_bottom).offset(8)
             make.left.equalTo(self).offset(10)
         }
         
-        commentLabel = UILabel()
-        setLabelAttribute(commentLabel)
+        commentLabel = getAttributeedLabel()
         commentLabel.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(readLabel)
             make.left.equalTo(readLabel.snp_right).offset(3)
         }
  
-        favorLabel = UILabel()
-        setLabelAttribute(favorLabel)
+        favorLabel = getAttributeedLabel()
         favorLabel.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(commentLabel)
             make.left.equalTo(commentLabel.snp_right).offset(3)
@@ -104,11 +100,13 @@ class ContentTableCell: UITableViewCell {
         
     }
     
-    func setLabelAttribute(label: UILabel){
+    func getAttributeedLabel() -> UILabel{
+        let label = UILabel()
         label.font = UIFont.systemFontOfSize(12)
         label.textColor = UIColor.grayColor()
         label.sizeToFit()
         addSubview(label)
+        return label
     }
     
 }

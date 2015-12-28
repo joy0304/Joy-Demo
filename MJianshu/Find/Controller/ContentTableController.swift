@@ -25,11 +25,10 @@ class ContentTableController: UITableViewController {
     }
     
     func loadDatas(){
-        weak var weakSelf = self
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { () -> Void in
-            weakSelf!.articleArray = weakSelf!.repository.loadArticles()
+            self.articleArray = self.repository.loadArticles()
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                weakSelf!.tableView.reloadData()
+                self.tableView.reloadData()
             })
         }
     }

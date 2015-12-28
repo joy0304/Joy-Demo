@@ -18,18 +18,18 @@ class ContentTableController: UITableViewController {
 
         automaticallyAdjustsScrollViewInsets = false
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = CGFloat(200)
         
         loadDatas()
 
     }
     
     func loadDatas(){
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { () -> Void in
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
             self.articleArray = self.repository.loadArticles()
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
                 self.tableView.reloadData()
-            })
+            }
         }
     }
 

@@ -8,62 +8,38 @@
 
 import Foundation
 
-class Article: NSObject {
-    
+class Article: NSObject {    
     var userName: String?
-    var previewImage: String?
+    var previewImageStr: String?
     var timeValue: String?
-    var readNumber: Int?
-    var commentNumber: Int?
-    var favorNumber: Int?
-
-//    init(userName: String,previewImage: String,timeValue: String,readNumber: Int,commentNumber: Int,favorNumber: Int) {
-//        //super.init()
-//        self.userName = userName
-//        self.previewImage = previewImage
-//        self.timeValue = timeValue
-//        self.readNumber = readNumber
-//        self.commentNumber = commentNumber
-//        self.favorNumber = favorNumber
-//    }
+    var readNumber: NSNumber?
+    var commentNumber: NSNumber?
+    var favorNumber: NSNumber?
 }
 
 protocol Repository{
-    
-   // var articles: [Article]{ get }
-    
     func loadArticles()->[Article]
-    
 }
 
 class ArticleRepository: Repository {
     
     var articleArray: NSArray?
+    var emptyResult: NSArray = []
     
-//    var articles: [Article]{
-//        return articleArray
-//    }
-//    
-   // var a: NSArray?
-    
+    // 使用Leancloud来存储数据－获取数据
     func loadArticles()->[Article] {
         let query = AVQuery(className: "FindContentModel")
         query.whereKey("userName", notEqualTo: " ")
         query.limit = 8
         query.addDescendingOrder("updatedAt")
-        let results = query.findObjects() as NSArray
-        let temp = results.valueForKey("localData")
-        print(temp)
-        articleArray = Article.mj_objectArrayWithKeyValuesArray(temp)
-        //print("s")
-        print(articleArray)
-        return articleArray as! [Article]
-        //print(articleArray?.firstObject?)
-        //print(articleArray?.mj_keyValuesWithKeys("localData" as AnyObject)
-//        for i in articleArray as! [Article] {
-//            //print(i)
-//            print(i.favorNumber)
-//        }
+        let jsonResult = query.findObjects()
+        guard jsonResult != nil else{
+            return emptyResult as! [Article]
+        }
+        let jsona = jsonResult as NSArray
+        articleArray = Article.mj_objectArrayWithKeyValuesArray(jsona.valueForKey("localData"))
+        return articleArray! as! [Article]
+        
     }
 }
 

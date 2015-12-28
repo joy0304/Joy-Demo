@@ -9,18 +9,29 @@
 import UIKit
 import SnapKit
 class ContentTableCell: UITableViewCell {
-    
     var userLable: UILabel!
     var timeLabel: UILabel!
     var previewImage: UIImageView!
     var articleTitle: UILabel!
     var readLabel: UILabel!
-    var readNumber: Int!
+    var readNumber: Int?
     var commentLabel: UILabel!
-    var commentNumber: Int!
+    var commentNumber: Int?
     var favorLabel: UILabel!
-    var favorNumber : Int!
-    // 数据需要更改
+    var favorNumber : Int?
+    var model: Article?{
+        didSet{
+            guard let model = model else{
+                return
+            }
+            userLable.text = model.userName
+            timeLabel.text = model.timeValue
+            readLabel.text = "阅读 " + String(model.readNumber as! Int)
+            commentLabel.text = "● 评论 " + String(model.commentNumber as! Int)
+            favorLabel.text = "● 喜欢 " + String(model.favorNumber as! Int)
+        }
+    }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "contentCell")
         
@@ -71,7 +82,6 @@ class ContentTableCell: UITableViewCell {
         }
         
         readLabel = UILabel()
-        readLabel.text = "阅读 " + String(readNumber)
         setLabelAttribute(readLabel)
         readLabel.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(articleTitle.snp_bottom).offset(8)
@@ -80,7 +90,6 @@ class ContentTableCell: UITableViewCell {
         
         commentLabel = UILabel()
         setLabelAttribute(commentLabel)
-        commentLabel.text = "● 评论 " + String(commentNumber)
         commentLabel.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(readLabel)
             make.left.equalTo(readLabel.snp_right).offset(3)
@@ -88,7 +97,6 @@ class ContentTableCell: UITableViewCell {
  
         favorLabel = UILabel()
         setLabelAttribute(favorLabel)
-        favorLabel.text = "● 喜欢 " + String(favorNumber)
         favorLabel.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(commentLabel)
             make.left.equalTo(commentLabel.snp_right).offset(3)

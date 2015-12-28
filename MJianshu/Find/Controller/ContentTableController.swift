@@ -10,8 +10,8 @@ import UIKit
 
 class ContentTableController: UITableViewController {
 
-    var re: Repository = ArticleRepository()
-
+    var repository: Repository = ArticleRepository()
+    var articleArray: [Article]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +19,18 @@ class ContentTableController: UITableViewController {
         automaticallyAdjustsScrollViewInsets = false
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
-        let a: [Article] = re.loadArticles()
-        for i in a{
-            print(i)
-            print(i.readNumber)
+        
+        loadDatas()
+
+    }
+    
+    func loadDatas(){
+        weak var weakSelf = self
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { () -> Void in
+            weakSelf!.articleArray = weakSelf!.repository.loadArticles()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                weakSelf!.tableView.reloadData()
+            })
         }
     }
 
@@ -30,7 +38,7 @@ class ContentTableController: UITableViewController {
 // MARK: - TableView dataSource
 extension ContentTableController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 8
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = "contentCell"
@@ -39,10 +47,11 @@ extension ContentTableController {
             cell = ContentTableCell(style: UITableViewCellStyle.Default, reuseIdentifier: identifier)
             cell?.selectionStyle = UITableViewCellSelectionStyle.None
         }
+        cell?.model = articleArray?[indexPath.row]
         cell?.articleTitle.text = "打看精神科d额外企鹅王企鹅sdsa大师的撒的算"
-        cell?.userLable.text = "Martin"
+        //cell?.userLable.text = "Martin"
         cell?.previewImage.image = UIImage(named: "temp")
-        cell?.timeLabel.text = "12.23"
+        //cell?.timeLabel.text = "12.23"
         return cell!
     }
     

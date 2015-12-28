@@ -209,7 +209,7 @@
 		9B550E541C256D6D00217258 /* Find */ = {
 			isa = PBXGroup;
 			children = (
-				9B550E671C2573B900217258 /* Mode */,
+				9B550E671C2573B900217258 /* Model */,
 				9B550E621C256DF500217258 /* View */,
 				9B550E5B1C256DE200217258 /* Controller */,
 			);
@@ -236,13 +236,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		9B550E671C2573B900217258 /* Mode */ = {
+		9B550E671C2573B900217258 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				9B550E681C25740600217258 /* FindViewModel.swift */,
 				9B550E6A1C2579F700217258 /* ThemeScrollViewModel.swift */,
 				1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */,
 			);
+			name = Model;
 			path = Mode;
 			sourceTree = "<group>";
 		};

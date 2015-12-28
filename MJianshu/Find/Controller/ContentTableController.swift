@@ -8,17 +8,24 @@
 
 import UIKit
 
-class ContentTableController: UITableViewController {
-
+class ContentTableController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var tableView = UITableView()
     var repository: Repository = ArticleRepository()
     var articleArray: [Article]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         automaticallyAdjustsScrollViewInsets = false
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.addSubview(tableView)
+        tableView.snp_makeConstraints { (make) -> Void in
+            make.edges.equalTo(view)
+        }
+        
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = CGFloat(200)
+        tableView.estimatedRowHeight = 200
         
         loadDatas()
 
@@ -28,6 +35,7 @@ class ContentTableController: UITableViewController {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
             self.articleArray = self.repository.loadArticles()
             dispatch_async(dispatch_get_main_queue()) {
+                print(self.articleArray)
                 self.tableView.reloadData()
             }
         }
@@ -36,10 +44,11 @@ class ContentTableController: UITableViewController {
 }
 // MARK: - TableView dataSource
 extension ContentTableController {
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
     }
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = "contentCell"
         var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? ContentTableCell
         if cell == nil{
@@ -48,9 +57,8 @@ extension ContentTableController {
         }
         cell?.model = articleArray?[indexPath.row]
         cell?.articleTitle.text = "打看精神科d额外企鹅王企鹅sdsa大师的撒的算"
-        //cell?.userLable.text = "Martin"
         cell?.previewImage.image = UIImage(named: "temp")
-        //cell?.timeLabel.text = "12.23"
+        
         return cell!
     }
     

@@ -36,8 +36,8 @@ class ArticleRepository: Repository {
         guard jsonResult != nil else{
             return emptyResult as! [Article]
         }
-        let jsona = jsonResult as NSArray
-        articleArray = Article.mj_objectArrayWithKeyValuesArray(jsona.valueForKey("localData"))
+        let jsonArray = jsonResult as NSArray
+        articleArray = Article.mj_objectArrayWithKeyValuesArray(jsonArray.valueForKey("localData"))
         return articleArray! as! [Article]
         
     }

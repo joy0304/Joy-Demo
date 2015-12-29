@@ -10,11 +10,13 @@ import Foundation
 
 class Article: NSObject {    
     var userName: String?
+    var articleTitle: String?
     var previewImageStr: String?
     var timeValue: String?
     var readNumber: NSNumber?
     var commentNumber: NSNumber?
     var favorNumber: NSNumber?
+    
 }
 
 protocol Repository{

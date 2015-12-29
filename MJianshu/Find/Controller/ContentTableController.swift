@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ContentTableController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var tableView = UITableView()
@@ -35,7 +36,6 @@ class ContentTableController: UIViewController, UITableViewDataSource, UITableVi
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
             self.articleArray = self.repository.loadArticles()
             dispatch_async(dispatch_get_main_queue()) {
-                print(self.articleArray)
                 self.tableView.reloadData()
             }
         }
@@ -45,7 +45,10 @@ class ContentTableController: UIViewController, UITableViewDataSource, UITableVi
 // MARK: - TableView dataSource
 extension ContentTableController {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        guard articleArray != nil else{
+            return 0
+        }
+        return articleArray!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -55,11 +58,13 @@ extension ContentTableController {
             cell = ContentTableCell(style: UITableViewCellStyle.Default, reuseIdentifier: identifier)
             cell?.selectionStyle = UITableViewCellSelectionStyle.None
         }
+        let imageURl = articleArray?[indexPath.row].previewImageStr
+        cell?.previewImage.kf_setImageWithURL(NSURL(string: imageURl!)!,
+            placeholderImage:  UIImage(named: "temp"),
+            optionsInfo: [.Transition(ImageTransition.Fade(1))])
         cell?.model = articleArray?[indexPath.row]
-        cell?.articleTitle.text = "打看精神科d额外企鹅王企鹅sdsa大师的撒的算"
-        cell?.previewImage.image = UIImage(named: "temp")
-        
         return cell!
+
     }
     
 }

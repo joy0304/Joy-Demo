@@ -26,6 +26,7 @@ class ContentTableCell: UITableViewCell {
             }
             userLable.text = model.userName
             timeLabel.text = model.timeValue
+            articleTitle.text = model.articleTitle
             readLabel.text = "阅读 " + String(model.readNumber as! Int)
             commentLabel.text = "● 评论 " + String(model.commentNumber as! Int)
             favorLabel.text = "● 喜欢 " + String(model.favorNumber as! Int)

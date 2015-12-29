@@ -22,6 +22,7 @@
 		1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */; };
 		1BE2833F1C25B57E002ACA49 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2833E1C25B57E002ACA49 /* ThemeView.swift */; };
 		1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */; };
+		9B4BEFE81C32A5B700827771 /* ContentTableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BEFE71C32A5B700827771 /* ContentTableDatasource.swift */; };
 		9B550E5F1C256DE200217258 /* ContentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5C1C256DE200217258 /* ContentTableController.swift */; };
 		9B550E601C256DE200217258 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5D1C256DE200217258 /* FindViewController.swift */; };
 		9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5E1C256DE200217258 /* ThemeScrollController.swift */; };
@@ -53,6 +54,7 @@
 		1BE2833E1C25B57E002ACA49 /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableModel.swift; sourceTree = "<group>"; };
 		1BF2EFAC1C2EB95800AB38FA /* MJianshu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MJianshu-Bridging-Header.h"; sourceTree = "<group>"; };
+		9B4BEFE71C32A5B700827771 /* ContentTableDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableDatasource.swift; sourceTree = "<group>"; };
 		9B550E5C1C256DE200217258 /* ContentTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableController.swift; sourceTree = "<group>"; };
 		9B550E5D1C256DE200217258 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		9B550E5E1C256DE200217258 /* ThemeScrollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeScrollController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				9B550E681C25740600217258 /* FindViewModel.swift */,
 				9B550E6A1C2579F700217258 /* ThemeScrollViewModel.swift */,
 				1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */,
+				9B4BEFE71C32A5B700827771 /* ContentTableDatasource.swift */,
 			);
 			name = Model;
 			path = Mode;
@@ -307,7 +310,7 @@
 				TargetAttributes = {
 					1B6E9F6E1C1F9E240089542C = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 9YJM37DPL5;
+						DevelopmentTeam = U2HX3RFD94;
 					};
 				};
 			};
@@ -412,6 +415,7 @@
 				9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */,
 				1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */,
 				1B6E9F921C1FADF60089542C /* FriendsViewController.swift in Sources */,
+				9B4BEFE81C32A5B700827771 /* ContentTableDatasource.swift in Sources */,
 				9BDA78991C2479DD00B98981 /* Extension.swift in Sources */,
 				1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */,
 			);
@@ -521,10 +525,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MJianshu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Martinwjl.MJianshu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kt.MJianshu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MJianshu/MJianshu-Bridging-Header.h";
@@ -542,10 +547,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MJianshu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Martinwjl.MJianshu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kt.MJianshu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MJianshu/MJianshu-Bridging-Header.h";

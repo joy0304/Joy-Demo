@@ -1,44 +1,36 @@
 //
-//  ThemeView.swift
+//  TopScrollView.swift
 //  MJianshu
 //
-//  Created by wjl on 15/12/19.
+//  Created by 张星宇 on 15/12/29.
 //  Copyright © 2015年 Martin. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-protocol ThemeDelegate:UIScrollViewDelegate{
+@objc protocol TopScrollViewDelegate{
     func labelClicked(recognizer: UITapGestureRecognizer)
     func labelTitleArray() -> [String]?
 }
 
-private let topScrollHeight: CGFloat = 40.0
-
-class ThemeView: UIView {
+class TopScrollView: UIView {
     let labelGapX: CGFloat = 15.0
-    var rightConstraint: Constraint?
-    
     var themeArr: Array<String>!
     
     var topScroll: UIScrollView!
-    var bottomScroll: UIScrollView!
     var topContainerView = UIView()
-    var bottomContainerView = UIView()
     
-    weak var delegate: ThemeDelegate?
+    weak var delegate: TopScrollViewDelegate?
     
-    init(delegate: ThemeDelegate){
+    init(delegate: TopScrollViewDelegate){
         super.init(frame: CGRectNull)
         
         self.delegate = delegate
         themeArr = labelTitleArray()
         
         setTopScroll()
-        setBottomScroll()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -70,6 +62,7 @@ class ThemeView: UIView {
             label.text = themeArr[idx]
             label.font = UIFont(name: "HYQiHei", size: 19)
             label.textColor = (idx==0) ? UIColor.purpleColor() : UIColor.blackColor()
+            label.transform = (idx==0) ? CGAffineTransformMakeScale(1.3,1.3) : CGAffineTransformMakeScale(1,1)
             label.sizeToFit()
             label.tag = idx
             label.userInteractionEnabled = true
@@ -92,56 +85,10 @@ class ThemeView: UIView {
             }
         }
     }
-
-
-    func setBottomScroll(){
-        bottomScroll = UIScrollView()
-        bottomScroll.pagingEnabled = true
-        bottomScroll.showsHorizontalScrollIndicator = false
-        bottomScroll.bounces = false
-        bottomScroll.delegate = delegate
-        addSubview(bottomScroll)
-        bottomScroll.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(topScroll.snp_bottom)
-            make.left.right.bottom.equalTo(self)
-        }
-        
-        bottomContainerView.backgroundColor = bottomScroll.backgroundColor
-        bottomScroll.addSubview(bottomContainerView)
-        
-        bottomContainerView.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(bottomScroll)
-            make.bottom.equalTo(self)
-            make.top.equalTo(self).offset(topScrollHeight)
-        }
-    }
 }
 
-extension ThemeView {
-    func addBottomViews(view: UIView) {
-        bottomContainerView.addSubview(view)
-        
-        view.snp_makeConstraints(closure: { (make) -> Void in
-            make.top.height.equalTo(bottomContainerView)
-            make.width.equalTo(ScreenWidth)
-            if bottomContainerView.subviews.count > 1 {
-                let previousView = bottomScroll.subviews[0].subviews[bottomContainerView.subviews.count - 2] 
-                make.left.equalTo(previousView.snp_right)
-            }
-            else {
-                make.left.equalTo(0)
-            }
-        })
-        
-        rightConstraint?.uninstall()
-        bottomContainerView.snp_makeConstraints(closure: { (make) -> Void in
-            rightConstraint = make.right.equalTo(view).constraint
-        })
-    }
-}
-
-// MARK: - ThemeDelegate协议
-extension ThemeView {
+// MARK: - TopScrollViewDelegate协议
+extension TopScrollView {
     func labelClicked(recognizer: UITapGestureRecognizer){
         delegate?.labelClicked(recognizer)
     }

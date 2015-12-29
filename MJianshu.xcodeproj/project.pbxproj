@@ -20,9 +20,12 @@
 		1B6E9F981C1FB2580089542C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F971C1FB2580089542C /* WriteViewController.swift */; };
 		1B6E9FA21C1FBB270089542C /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9FA11C1FBB270089542C /* Write.storyboard */; };
 		1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */; };
-		1BE2833F1C25B57E002ACA49 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2833E1C25B57E002ACA49 /* ThemeView.swift */; };
 		1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */; };
 		9B4BEFE81C32A5B700827771 /* ContentTableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BEFE71C32A5B700827771 /* ContentTableDatasource.swift */; };
+		9B4BEFEE1C32AE5300827771 /* BottomScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BEFED1C32AE5300827771 /* BottomScrollViewController.swift */; };
+		9B4BEFF01C32AEBC00827771 /* BottomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BEFEF1C32AEBC00827771 /* BottomScrollView.swift */; };
+		9B4BEFF21C32B58400827771 /* TopScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BEFF11C32B58400827771 /* TopScrollViewController.swift */; };
+		9B4BEFF41C32B5A300827771 /* TopScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BEFF31C32B5A300827771 /* TopScrollView.swift */; };
 		9B550E5F1C256DE200217258 /* ContentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5C1C256DE200217258 /* ContentTableController.swift */; };
 		9B550E601C256DE200217258 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5D1C256DE200217258 /* FindViewController.swift */; };
 		9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E5E1C256DE200217258 /* ThemeScrollController.swift */; };
@@ -51,10 +54,13 @@
 		1B6E9FA11C1FBB270089542C /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
 		1BB020E41C3004B00000D69B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableCell.swift; sourceTree = "<group>"; };
-		1BE2833E1C25B57E002ACA49 /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableModel.swift; sourceTree = "<group>"; };
 		1BF2EFAC1C2EB95800AB38FA /* MJianshu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MJianshu-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B4BEFE71C32A5B700827771 /* ContentTableDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableDatasource.swift; sourceTree = "<group>"; };
+		9B4BEFED1C32AE5300827771 /* BottomScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomScrollViewController.swift; sourceTree = "<group>"; };
+		9B4BEFEF1C32AEBC00827771 /* BottomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomScrollView.swift; sourceTree = "<group>"; };
+		9B4BEFF11C32B58400827771 /* TopScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopScrollViewController.swift; sourceTree = "<group>"; };
+		9B4BEFF31C32B5A300827771 /* TopScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopScrollView.swift; sourceTree = "<group>"; };
 		9B550E5C1C256DE200217258 /* ContentTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableController.swift; sourceTree = "<group>"; };
 		9B550E5D1C256DE200217258 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		9B550E5E1C256DE200217258 /* ThemeScrollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeScrollController.swift; sourceTree = "<group>"; };
@@ -224,6 +230,8 @@
 				9B550E5C1C256DE200217258 /* ContentTableController.swift */,
 				9B550E5D1C256DE200217258 /* FindViewController.swift */,
 				9B550E5E1C256DE200217258 /* ThemeScrollController.swift */,
+				9B4BEFF11C32B58400827771 /* TopScrollViewController.swift */,
+				9B4BEFED1C32AE5300827771 /* BottomScrollViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -232,7 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				9B550E651C256E2500217258 /* FindView.swift */,
-				1BE2833E1C25B57E002ACA49 /* ThemeView.swift */,
+				9B4BEFF31C32B5A300827771 /* TopScrollView.swift */,
+				9B4BEFEF1C32AEBC00827771 /* BottomScrollView.swift */,
 				1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */,
 			);
 			path = View;
@@ -407,14 +416,17 @@
 				1B6E9F731C1F9E240089542C /* AppDelegate.swift in Sources */,
 				1B6E9F901C1FADAE0089542C /* FollowViewController.swift in Sources */,
 				1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */,
-				1BE2833F1C25B57E002ACA49 /* ThemeView.swift in Sources */,
+				9B4BEFF41C32B5A300827771 /* TopScrollView.swift in Sources */,
 				1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */,
 				9B550E601C256DE200217258 /* FindViewController.swift in Sources */,
 				9B550E691C25740600217258 /* FindViewModel.swift in Sources */,
 				1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */,
 				9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */,
 				1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */,
+				9B4BEFF21C32B58400827771 /* TopScrollViewController.swift in Sources */,
 				1B6E9F921C1FADF60089542C /* FriendsViewController.swift in Sources */,
+				9B4BEFEE1C32AE5300827771 /* BottomScrollViewController.swift in Sources */,
+				9B4BEFF01C32AEBC00827771 /* BottomScrollView.swift in Sources */,
 				9B4BEFE81C32A5B700827771 /* ContentTableDatasource.swift in Sources */,
 				9BDA78991C2479DD00B98981 /* Extension.swift in Sources */,
 				1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */,

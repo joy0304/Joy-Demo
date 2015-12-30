@@ -18,20 +18,22 @@ class Article: NSObject {
     var favorNumber: NSNumber?
     
 }
-
+// 这里等加了本地数据之后再改吧，晕乎乎的还不知道这里可以做啥
 protocol Repository{
-    func loadArticles()->[Article]
+    var pageID: Int? { get }
+    func loadArticles(pageID: Int)->[Article]
 }
 
 class ArticleRepository: Repository {
     
+    var pageID: Int?
     var articleArray: NSArray?
     var emptyResult: NSArray = []
     
     // 使用Leancloud来存储数据－获取数据
-    func loadArticles()->[Article] {
+    func loadArticles(pageID: Int)->[Article] {
         let query = AVQuery(className: "FindContentModel")
-        query.whereKey("userName", notEqualTo: " ")
+        query.whereKey("pageID", equalTo: pageID)
         query.limit = 8
         query.addDescendingOrder("updatedAt")
         let jsonResult = query.findObjects()

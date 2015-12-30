@@ -43,10 +43,10 @@ extension BottomScrollViewController {
         var vcsToEnqueue: Array<ContentTableController> = []
         
         for vc in visibleViewControllers {
-            if (vc.pageId == nil || !pagesToLoad.contains(vc.pageId!)) {
+            if (vc.pageID == nil || !pagesToLoad.contains(vc.pageID!)) {
                 vcsToEnqueue.append(vc)  //用不到的vc就进队
-            } else if (vc.pageId != nil) {
-                pagesToLoad.removeObject(vc.pageId!)
+            } else if (vc.pageID != nil) {
+                pagesToLoad.removeObject(vc.pageID!)
             }
         }
         
@@ -64,7 +64,7 @@ extension BottomScrollViewController {
         guard (0..<getTitleArrayLength()).contains(page) else { return }
         
         let vc = dequeueReusableViewController()
-        vc.pageId = page
+        vc.pageID = page
         
         (view as! BottomScrollView).addBottomViewAtIndex(page, view: vc.view)
         visibleViewControllers.append(vc)
@@ -79,7 +79,8 @@ extension BottomScrollViewController {
             return reusableViewControllers.removeFirst()
         }
         else {
-            let vc = ContentTableController()
+            //?????
+            let vc = ContentTableController(pageID: 0)
             vc.willMoveToParentViewController(self)
             self.addChildViewController(vc)
             vc.didMoveToParentViewController(self)

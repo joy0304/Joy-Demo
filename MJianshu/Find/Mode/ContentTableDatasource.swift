@@ -13,16 +13,18 @@ class ContentTableDatasource: NSObject, UITableViewDataSource {
     var articleArray: [Article]? = nil
     var repository: Repository = ArticleRepository()
     var updateCompletionHnadler: () -> ()
+    var pageID: Int?
     
-    init(updateCompletionHnadler: () -> ()) {
+    init(pageID: Int,updateCompletionHnadler: () -> ()) {
+        self.pageID = pageID
         self.updateCompletionHnadler = updateCompletionHnadler
         super.init()
         update()
     }
     
     func update() {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-            self.articleArray = self.repository.loadArticles()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 2)) {
+            self.articleArray = self.repository.loadArticles(self.pageID!)
             dispatch_async(dispatch_get_main_queue()) {
                 self.updateCompletionHnadler()
             }

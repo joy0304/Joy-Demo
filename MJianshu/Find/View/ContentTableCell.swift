@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 class ContentTableCell: UITableViewCell {
     var userLable: UILabel!
     var timeLabel: UILabel!
@@ -19,20 +20,7 @@ class ContentTableCell: UITableViewCell {
     var commentNumber: Int?
     var favorLabel: UILabel!
     var favorNumber : Int?
-    var model: Article?{
-        didSet{
-            guard let model = model else{
-                return
-            }
-            userLable.text = model.userName
-            timeLabel.text = model.timeValue
-            articleTitle.text = model.articleTitle
-            readLabel.text = "阅读 " + String(model.readNumber as! Int)
-            commentLabel.text = "● 评论 " + String(model.commentNumber as! Int)
-            favorLabel.text = "● 喜欢 " + String(model.favorNumber as! Int)
-        }
-    }
-    
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "contentCell")
         
@@ -108,6 +96,19 @@ class ContentTableCell: UITableViewCell {
         label.sizeToFit()
         addSubview(label)
         return label
+    }
+    
+    func configureForCell(article: Article){
+        userLable.text = article.userName
+        timeLabel.text = article.timeValue
+        articleTitle.text = article.articleTitle
+        readLabel.text = "阅读 " + String(article.readNumber as! Int)
+        commentLabel.text = "● 评论 " + String(article.commentNumber as! Int)
+        favorLabel.text = "● 喜欢 " + String(article.favorNumber as! Int)
+        previewImage.kf_setImageWithURL(NSURL(string: article.previewImageStr!)!,
+            placeholderImage:  UIImage(named: "temp"),
+            optionsInfo: [.Transition(ImageTransition.Fade(1))])
+        
     }
     
 }

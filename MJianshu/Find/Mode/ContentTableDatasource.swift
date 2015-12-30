@@ -27,13 +27,8 @@ extension ContentTableDatasource {
             cell = ContentTableCell(style: UITableViewCellStyle.Default, reuseIdentifier: identifier)
             cell?.selectionStyle = UITableViewCellSelectionStyle.None
         }
-        
-        let imageURl = articleArray?[indexPath.row].previewImageStr
-        cell?.previewImage.kf_setImageWithURL(NSURL(string: imageURl!)!,
-            placeholderImage:  UIImage(named: "temp"),
-            optionsInfo: [.Transition(ImageTransition.Fade(1))])
-        cell?.model = articleArray?[indexPath.row]
-        
+        let article = articleArray![indexPath.row]
+        cell?.configureForCell(article)
         return cell!
     }
 }

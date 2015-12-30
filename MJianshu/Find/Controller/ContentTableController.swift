@@ -11,9 +11,11 @@ import Kingfisher
 
 class ContentTableController: UIViewController, UITableViewDelegate {
     var tableView = UITableView()
-    var repository: Repository = ArticleRepository()
-    var articleArray: [Article]?
-    var dataSource = ContentTableDatasource()
+    var dataSource: ContentTableDatasource? {
+        didSet {
+            tableView.dataSource = dataSource
+        }
+    }
     var pageId: Int?
     
     override func viewDidLoad() {
@@ -21,17 +23,8 @@ class ContentTableController: UIViewController, UITableViewDelegate {
         automaticallyAdjustsScrollViewInsets = false
         
         setUpTableView()
-        loadDatas(dataSource)
-    }
-    
-    func loadDatas(dataSource: ContentTableDatasource){
-        tableView.dataSource = dataSource
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-            self.dataSource.articleArray = self.repository.loadArticles()
-            dispatch_async(dispatch_get_main_queue()) {
-                self.tableView.reloadData()
-            }
+        dataSource = ContentTableDatasource() { [weak self] in
+            self?.tableView.reloadData()
         }
     }
     

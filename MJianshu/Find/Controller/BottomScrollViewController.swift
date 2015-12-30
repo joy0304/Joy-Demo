@@ -31,14 +31,6 @@ class BottomScrollViewController: UIViewController, UIScrollViewDelegate {
     override func loadView() {
         view = BottomScrollView(pages: getTitleArrayLength())
     }
-    
-    func addContentViewControllers() {
-        for i in 0..<getTitleArrayLength() {
-            let contentVC = ContentTableController()
-            self.addChildViewController(contentVC)
-            (view as! BottomScrollView).addBottomViewAtIndex(i, view: contentVC.view)
-        }
-    }
 }
 
 // MARK: - ViewController重用
@@ -106,7 +98,7 @@ extension BottomScrollViewController {
      */
     func getTitleArrayLength() -> Int {
         if titleArrayLength == nil,
-            let themeScrollViewController = self.parentViewController as? ThemeScrollController{
+            let themeScrollViewController = self.parentViewController as? ThemeScrollController {
                 titleArrayLength = themeScrollViewController.getTitleArrayNumber()
         }
         return titleArrayLength!
@@ -115,12 +107,6 @@ extension BottomScrollViewController {
 
 // MARK - 实现UIScrollViewDelegate协议
 extension BottomScrollViewController{
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        if let parentVC = parentViewController as? ThemeScrollController {
-            parentVC.scrollViewWillBeginDragging(scrollView)
-        }
-    }
-
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         if let parentVC = parentViewController as? ThemeScrollController {
             parentVC.scrollViewDidEndDecelerating(scrollView)

@@ -12,8 +12,6 @@ import SnapKit
 public let topScrollHeight: CGFloat = 40.0
 
 class ThemeScrollController: UIViewController{
-    var currentPage = 0
-    
     let topScrollViewController: TopScrollViewController
     let bottomScrollViewController = BottomScrollViewController()
     
@@ -73,21 +71,17 @@ extension ThemeScrollController {
      :param: recognizer 触摸手势识别器
      */
     func labelClicked(recognizer: UITapGestureRecognizer){
-        let titleLabel = recognizer.view
-        var tempOffSetX: CGFloat?
-        if let view = bottomScrollViewController.view as? BottomScrollView {
-            currentPage = Int(view.bottomScroll.contentOffset.x / ScreenWidth)
-            if currentPage > titleLabel?.tag{
-                tempOffSetX = CGFloat(titleLabel!.tag+1) * ScreenWidth
-            }
-            else{
-                tempOffSetX = CGFloat(titleLabel!.tag-1) * ScreenWidth
+        let targetPage = recognizer.view!.tag
+        let previousPage = recognizer.view!.tag - 1
+        updateTopScrollViewLabel(targetPage)  // 更新label颜色
+        
+        if let buttomScrollView = bottomScrollViewController.view as? BottomScrollView {
 
-            }
-//            view.bottomScroll.contentOffset = CGPointMake(tempOffSetX!, 0)
-            let offSetX = CGFloat(titleLabel!.tag) * ScreenWidth
-            view.bottomScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)
-
+            let previousOffSetX = CGFloat(previousPage) * ScreenWidth
+            buttomScrollView.bottomScroll.setContentOffset(CGPointMake(previousOffSetX, 0), animated: false)
+            
+            let offSetX = CGFloat(recognizer.view!.tag) * ScreenWidth
+            buttomScrollView.bottomScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)
         }
     }
 }
@@ -100,11 +94,7 @@ extension ThemeScrollController {
 }
 
 // MARK - 实现UIScrollViewDelegate协议
-extension ThemeScrollController{
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        
-    }
-    
+extension ThemeScrollController{    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
         let index = Int(scrollView.contentOffset.x / ScreenWidth)
@@ -114,10 +104,10 @@ extension ThemeScrollController{
             let titleLabel = view.topScroll.subviews[0].subviews[index] as! UILabel
             var offSetX = titleLabel.center.x - view.topScroll.frame.size.width * 0.5
             let offSetMaxX = view.topScroll.contentSize.width - view.topScroll.frame.size.width
-            if offSetX < 0{
+            if offSetX < 0 {
                 offSetX = 0
             }
-            else if (offSetX > offSetMaxX){
+            else if (offSetX > offSetMaxX) {
                 offSetX = offSetMaxX
             }
             view.topScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)

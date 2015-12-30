@@ -11,6 +11,23 @@ import Kingfisher
 
 class ContentTableDatasource: NSObject, UITableViewDataSource {
     var articleArray: [Article]? = nil
+    var repository: Repository = ArticleRepository()
+    var updateCompletionHnadler: () -> ()
+    
+    init(updateCompletionHnadler: () -> ()) {
+        self.updateCompletionHnadler = updateCompletionHnadler
+        super.init()
+        update()
+    }
+    
+    func update() {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+            self.articleArray = self.repository.loadArticles()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.updateCompletionHnadler()
+            }
+        }
+    }
 }
 
 extension ContentTableDatasource {

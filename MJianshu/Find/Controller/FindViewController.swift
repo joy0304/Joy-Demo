@@ -33,7 +33,7 @@ class FindViewController: UIViewController, FindViewDelegate {
             view.containerScrollView.addSubview((articleViewController.view)!)
             articleViewController.view?.snp_makeConstraints(closure: { (make) -> Void in
                 make.top.left.equalTo(0)
-                make.right.equalTo(view)
+                make.width.equalTo(ScreenWidth)
                 make.bottom.equalTo(view).offset(-globalTabbarHeight)
             })
             
@@ -57,8 +57,8 @@ class FindViewController: UIViewController, FindViewDelegate {
 // MARK: - 实现FindViewDelegate
 extension FindViewController {
     func segmentValueChanged(){
-        if let localView = view as? FindView {
-            localView.containerScrollView.setContentOffset(CGPointMake(ScreenWidth * CGFloat(localView.segmentView.selectedSegmentIndex), 0), animated: true)
+        if let view = view as? FindView {
+            view.containerScrollView.setContentOffset(CGPointMake(ScreenWidth * CGFloat(view.segmentView.selectedSegmentIndex), 0), animated: true)
         }
     }
     

@@ -14,6 +14,7 @@ class ContentTableController: UIViewController, UITableViewDelegate {
     var repository: Repository = ArticleRepository()
     var articleArray: [Article]?
     var dataSource = ContentTableDatasource()
+    var pageId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -227,11 +227,11 @@
 		9B550E5B1C256DE200217258 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9B550E5C1C256DE200217258 /* ContentTableController.swift */,
 				9B550E5D1C256DE200217258 /* FindViewController.swift */,
 				9B550E5E1C256DE200217258 /* ThemeScrollController.swift */,
 				9B4BEFF11C32B58400827771 /* TopScrollViewController.swift */,
 				9B4BEFED1C32AE5300827771 /* BottomScrollViewController.swift */,
+				9B550E5C1C256DE200217258 /* ContentTableController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

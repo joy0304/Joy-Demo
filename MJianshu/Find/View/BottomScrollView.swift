@@ -13,8 +13,10 @@ class BottomScrollView: UIView {
     var bottomScroll = UIScrollView()
     var bottomContainerView = UIView()
     var rightConstraint: Constraint?
+    var pageNumber: Int
     
-    init(){
+    init(pages: Int){
+        self.pageNumber = pages
         super.init(frame: CGRectNull)
         setBottomScroll()
     }
@@ -39,29 +41,19 @@ class BottomScrollView: UIView {
         bottomContainerView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(bottomScroll)
             make.top.bottom.equalTo(self)
+            make.width.equalTo(CGFloat(pageNumber) * ScreenWidth)
         }
     }
 }
 
 extension BottomScrollView {
-    func addBottomViews(view: UIView) {
+    func addBottomViewAtIndex(index: Int, view: UIView) {
         bottomContainerView.addSubview(view)
         
         view.snp_makeConstraints(closure: { (make) -> Void in
             make.top.height.equalTo(bottomContainerView)
             make.width.equalTo(ScreenWidth)
-            if bottomContainerView.subviews.count > 1 {
-                let previousView = bottomScroll.subviews[0].subviews[bottomContainerView.subviews.count - 2]
-                make.left.equalTo(previousView.snp_right)
-            }
-            else {
-                make.left.equalTo(0)
-            }
-        })
-        
-        rightConstraint?.uninstall()
-        bottomContainerView.snp_makeConstraints(closure: { (make) -> Void in
-            rightConstraint = make.right.equalTo(view).constraint
+            make.left.equalTo(CGFloat(index) * ScreenWidth)
         })
     }
 }

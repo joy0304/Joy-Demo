@@ -13,10 +13,10 @@ class ContentTableDatasource: NSObject, UITableViewDataSource {
     var articleArray: [Article]? = nil
     var repository: Repository = ArticleRepository()
     var updateCompletionHnadler: () -> ()
-    var pageID: Int?
+    var page: Int
     
-    init(pageID: Int,updateCompletionHnadler: () -> ()) {
-        self.pageID = pageID
+    init(page: Int,updateCompletionHnadler: () -> ()) {
+        self.page = page
         self.updateCompletionHnadler = updateCompletionHnadler
         super.init()
         update()
@@ -24,7 +24,7 @@ class ContentTableDatasource: NSObject, UITableViewDataSource {
     
     func update() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 2)) {
-            self.articleArray = self.repository.loadArticles(self.pageID!)
+            self.articleArray = self.repository.loadArticles(self.page)
             dispatch_async(dispatch_get_main_queue()) {
                 self.updateCompletionHnadler()
             }

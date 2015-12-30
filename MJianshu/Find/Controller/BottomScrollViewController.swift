@@ -11,7 +11,8 @@ import UIKit
 class BottomScrollViewController: UIViewController, UIScrollViewDelegate {
     var reusableViewControllers: Array<ContentTableController> = []
     var visibleViewControllers: Array<ContentTableController> = []
-    var currentPage: Int?
+    var dataSources: [Int: ContentTableDatasource] = [:]  // 键是页数，值是datasource对象
+    var currentPage: Int = -1
     var titleArrayLength: Int? = nil
     
     override func viewDidLoad() {
@@ -66,6 +67,15 @@ extension BottomScrollViewController {
         let vc = dequeueReusableViewController()
         vc.pageID = page
         
+        // 从缓存中找，如果datasource已经存在就直接读取，否则新创建并加入缓存
+        if dataSources[page] == nil {
+            let dataSource = ContentTableDatasource(page: page) {
+                vc.tableView.reloadData()
+            }
+            dataSources[page] = dataSource
+        }
+        vc.dataSource = dataSources[page]
+        
         (view as! BottomScrollView).addBottomViewAtIndex(page, view: vc.view)
         visibleViewControllers.append(vc)
     }
@@ -80,7 +90,7 @@ extension BottomScrollViewController {
         }
         else {
             //?????
-            let vc = ContentTableController(pageID: 0)
+            let vc = ContentTableController()
             vc.willMoveToParentViewController(self)
             self.addChildViewController(vc)
             vc.didMoveToParentViewController(self)

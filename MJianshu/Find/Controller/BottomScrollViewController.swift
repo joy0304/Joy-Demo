@@ -14,6 +14,7 @@ class BottomScrollViewController: UIViewController, UIScrollViewDelegate {
     var dataSources: [Int: ContentTableDatasource] = [:]  // 键是页数，值是datasource对象
     var currentPage: Int = -1
     var titleArrayLength: Int? = nil
+    var shouldLoadPage = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,7 @@ extension BottomScrollViewController {
         guard currentPage != page else { return }  //还在当前页面就不用加载了
         
         currentPage = page
+        guard shouldLoadPage else { return }
         var pagesToLoad = [page - 1, page, page + 1]
         var vcsToEnqueue: Array<ContentTableController> = []
         
@@ -61,23 +63,45 @@ extension BottomScrollViewController {
         }
     }
     
+    func loadAllPages(page: Int) {
+        let pagesToLoad = [page - 1, page, page + 1]
+        for vc in visibleViewControllers {
+            vc.view.removeFromSuperview()
+            visibleViewControllers.removeObject(vc)
+            enqueueReusableViewController(vc)
+        }
+        
+        for page in pagesToLoad {
+            addViewControllerForPage(page)
+        }
+    }
+    
     func addViewControllerForPage(page: Int) {
         guard (0..<getTitleArrayLength()).contains(page) else { return }
         
         let vc = dequeueReusableViewController()
         vc.pageID = page
-        
-        // 从缓存中找，如果datasource已经存在就直接读取，否则新创建并加入缓存
-        if dataSources[page] == nil {
-            let dataSource = ContentTableDatasource(page: page) {
-                vc.tableView.reloadData()
-            }
-            dataSources[page] = dataSource
-        }
-        vc.dataSource = dataSources[page]
+        bindDataSourceWithViewController(vc, page: page)
         
         (view as! BottomScrollView).addBottomViewAtIndex(page, view: vc.view)
         visibleViewControllers.append(vc)
+    }
+    
+    /**
+     从缓存中找，如果datasource已经存在就直接读取，否则新创建并加入缓存
+     
+     :param: viewController 视图控制器
+     :param: page           视图控制器是第几页，根据页数去字典中找
+     */
+    func bindDataSourceWithViewController(viewController: ContentTableController, page: Int) {
+        if dataSources[page] == nil {
+            let dataSource = ContentTableDatasource(page: page) {
+                viewController.tableView.reloadData()
+            }
+            dataSources[page] = dataSource
+        }
+        
+        viewController.dataSource = dataSources[page]
     }
     
     func enqueueReusableViewController(viewController: ContentTableController) {
@@ -89,7 +113,6 @@ extension BottomScrollViewController {
             return reusableViewControllers.removeFirst()
         }
         else {
-            //?????
             let vc = ContentTableController()
             vc.willMoveToParentViewController(self)
             self.addChildViewController(vc)
@@ -99,7 +122,7 @@ extension BottomScrollViewController {
     }
 }
 
-// MARK: - 需要调用parentViewController中的方法
+// MARK: - 和parentViewController有关的方法
 extension BottomScrollViewController {
     /**
      通过parentViewController获取顶部scrollview有多少label
@@ -114,6 +137,11 @@ extension BottomScrollViewController {
         }
         return titleArrayLength!
     }
+    
+    func currentDisplayViewController() -> ContentTableController {
+        let index = Int((visibleViewControllers.count - 1) / 2)
+        return visibleViewControllers[index]
+    }
 }
 
 // MARK - 实现UIScrollViewDelegate协议
@@ -121,6 +149,12 @@ extension BottomScrollViewController{
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         if let parentVC = parentViewController as? ThemeScrollController {
             parentVC.scrollViewDidEndDecelerating(scrollView)
+        }
+    }
+    
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        if let parentVC = parentViewController as? ThemeScrollController {
+            parentVC.scrollViewDidEndScrollingAnimation(scrollView)
         }
     }
     

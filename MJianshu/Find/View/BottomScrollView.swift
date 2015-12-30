@@ -50,6 +50,7 @@ extension BottomScrollView {
     func addBottomViewAtIndex(index: Int, view: UIView) {
         bottomContainerView.addSubview(view)
         
+        view.snp_removeConstraints()
         view.snp_makeConstraints(closure: { (make) -> Void in
             make.top.height.equalTo(bottomContainerView)
             make.width.equalTo(ScreenWidth)

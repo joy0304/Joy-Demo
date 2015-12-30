@@ -14,6 +14,8 @@ public let topScrollHeight: CGFloat = 40.0
 class ThemeScrollController: UIViewController{
     let topScrollViewController: TopScrollViewController
     let bottomScrollViewController = BottomScrollViewController()
+    let tempVC = ContentTableController()
+    var maskView = UIView()
     
     init(type: ThemeScrollViewType) {
         topScrollViewController = TopScrollViewController(type: type)
@@ -72,15 +74,34 @@ extension ThemeScrollController {
      */
     func labelClicked(recognizer: UITapGestureRecognizer){
         let targetPage = recognizer.view!.tag
-        let previousPage = recognizer.view!.tag - 1
         updateTopScrollViewLabel(targetPage)  // 更新label颜色
         
         if let buttomScrollView = bottomScrollViewController.view as? BottomScrollView {
-
-            let previousOffSetX = CGFloat(previousPage) * ScreenWidth
-            buttomScrollView.bottomScroll.setContentOffset(CGPointMake(previousOffSetX, 0), animated: false)
-            
-            let offSetX = CGFloat(recognizer.view!.tag) * ScreenWidth
+            if targetPage > topScrollViewController.lastClickedLabelTag + 1 {  // 右侧不相邻label被点击了
+                bottomScrollViewController.shouldLoadPage = false
+                let previousOffSetX = CGFloat(targetPage - 1) * ScreenWidth  // 先不带动画滑到前一页
+                if let bottomScrollView = bottomScrollViewController.view as? BottomScrollView {
+                    maskView = bottomScrollViewController.currentDisplayViewController().view
+                    bottomScrollViewController.bindDataSourceWithViewController(tempVC, page: targetPage)
+                    
+                    buttomScrollView.bottomScroll.setContentOffset(CGPointMake(previousOffSetX, 0), animated: false)
+                    bottomScrollView.addBottomViewAtIndex(targetPage - 1, view: maskView)
+                    bottomScrollView.addBottomViewAtIndex(targetPage, view: tempVC.view)
+                }
+            }
+            if targetPage < topScrollViewController.lastClickedLabelTag - 1 {  // 左侧不相邻label被点击了
+                bottomScrollViewController.shouldLoadPage = false
+                let previousOffSetX = CGFloat(targetPage + 1) * ScreenWidth  // 先不带动画滑到前一页
+                if let bottomScrollView = bottomScrollViewController.view as? BottomScrollView {
+                    maskView = bottomScrollViewController.currentDisplayViewController().view
+                    bottomScrollViewController.bindDataSourceWithViewController(tempVC, page: targetPage)
+                    
+                    buttomScrollView.bottomScroll.setContentOffset(CGPointMake(previousOffSetX, 0), animated: false)
+                    bottomScrollView.addBottomViewAtIndex(targetPage + 1, view: maskView)
+                    bottomScrollView.addBottomViewAtIndex(targetPage, view: tempVC.view)
+                }
+            }
+            let offSetX = CGFloat(targetPage) * ScreenWidth
             buttomScrollView.bottomScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)
         }
     }
@@ -98,6 +119,7 @@ extension ThemeScrollController{
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
         let index = Int(scrollView.contentOffset.x / ScreenWidth)
+        topScrollViewController.lastClickedLabelTag = index  // 更新当前选中的label的tag
         updateTopScrollViewLabel(index)  // 更新label颜色
         
         if let view = topScrollViewController.view as? TopScrollView {
@@ -112,6 +134,14 @@ extension ThemeScrollController{
             }
             view.topScroll.setContentOffset(CGPointMake(offSetX, 0), animated: true)
         }
+    }
+    
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        maskView.removeFromSuperview()
+        tempVC.view.removeFromSuperview()
+        
+        bottomScrollViewController.shouldLoadPage = true
+        bottomScrollViewController.loadAllPages(bottomScrollViewController.currentPage)
     }
 }
 

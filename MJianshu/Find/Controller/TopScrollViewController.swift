@@ -10,6 +10,7 @@ import UIKit
 
 class TopScrollViewController: UIViewController, TopScrollViewDelegate {
     var type: ThemeScrollViewType?
+    var lastClickedLabelTag: Int = 0  // 最后一次被选中的按钮的tag
     lazy var themeDataModel: ThemeScrollViewModel = ThemeScrollViewModel()
     
     init(type: ThemeScrollViewType) {
@@ -48,6 +49,7 @@ extension TopScrollViewController {
     func labelClicked(recognizer: UITapGestureRecognizer){
         let controller = parentViewController as? ThemeScrollController
         controller?.labelClicked(recognizer)
+        lastClickedLabelTag = recognizer.view!.tag
     }
 }
 

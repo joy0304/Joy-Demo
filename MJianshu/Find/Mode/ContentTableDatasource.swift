@@ -14,22 +14,37 @@ class ContentTableDatasource: NSObject, UITableViewDataSource {
     var repository: Repository = ArticleRepository()
     var updateCompletionHnadler: () -> ()
     var page: Int
+    private var moreArticlePage: Int = 1
     
     init(page: Int,updateCompletionHnadler: () -> ()) {
         self.page = page
         self.updateCompletionHnadler = updateCompletionHnadler
         super.init()
-        update()
+        updateInfoList()
     }
     
-    func update() {
+    func updateInfoList() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 2)) {
-            self.articleArray = self.repository.loadArticles(self.page)
+            self.articleArray = self.repository.loadInfoList(self.page,moreArticlePage: 1)
             dispatch_async(dispatch_get_main_queue()) {
                 self.updateCompletionHnadler()
             }
         }
     }
+    
+    func loadMoreInfo(){
+        self.moreArticlePage += 1
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 2)) {
+            let moreArticleArray = self.repository.loadInfoList(self.page,moreArticlePage: self.moreArticlePage)
+            for article in moreArticleArray{
+                self.articleArray?.append(article)
+            }
+            dispatch_async(dispatch_get_main_queue()) {
+                self.updateCompletionHnadler()
+            }
+        }
+    }
+    
 }
 
 extension ContentTableDatasource {

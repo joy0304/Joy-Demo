@@ -97,6 +97,8 @@ extension BottomScrollViewController {
         if dataSources[page] == nil {
             let dataSource = ContentTableDatasource(page: page) {
                 viewController.tableView.reloadData()
+                viewController.tableView.mj_header.endRefreshing()
+
             }
             dataSources[page] = dataSource
         }

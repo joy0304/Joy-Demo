@@ -59,7 +59,7 @@ extension TopScrollViewController {
         if let view = view as? TopScrollView {
             for label in (view.topScroll.subviews[0].subviews as? [UILabel])! {
                 if label.tag == index {
-                    label.transform = CGAffineTransformMakeScale(1.3,1.3)
+                    label.transform = CGAffineTransformMakeScale(1.1,1.1)
                     label.textColor = UIColor.purpleColor()
                 }
                 else {

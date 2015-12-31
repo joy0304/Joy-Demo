@@ -110,7 +110,6 @@
 				9BDA78971C2479BC00B98981 /* Extension */,
 				1B6E9F8C1C1FACFF0089542C /* Controller */,
 				1B6E9F8B1C1FACF80089542C /* View */,
-				1B6E9F8A1C1FACD30089542C /* Model */,
 				1B6E9F871C1FAB740089542C /* Common */,
 				1BD96A841C20FB7E00371E4E /* Others */,
 			);
@@ -124,13 +123,6 @@
 				1B6E9F951C1FAFE80089542C /* CommonData.swift */,
 			);
 			name = Common;
-			sourceTree = "<group>";
-		};
-		1B6E9F8A1C1FACD30089542C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		1B6E9F8B1C1FACF80089542C /* View */ = {
@@ -317,7 +309,7 @@
 				TargetAttributes = {
 					1B6E9F6E1C1F9E240089542C = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = U2HX3RFD94;
+						DevelopmentTeam = 9YJM37DPL5;
 					};
 				};
 			};
@@ -539,7 +531,7 @@
 				INFOPLIST_FILE = MJianshu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kt.MJianshu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.handsome.MJianshu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MJianshu/MJianshu-Bridging-Header.h";
@@ -561,7 +553,7 @@
 				INFOPLIST_FILE = MJianshu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kt.MJianshu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.handsome.MJianshu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MJianshu/MJianshu-Bridging-Header.h";

@@ -8,9 +8,10 @@
 
 import UIKit
 import Kingfisher
-
+import MJRefresh
 class ContentTableController: UIViewController, UITableViewDelegate {
     var tableView = UITableView()
+    var page: Int?
     var dataSource: ContentTableDatasource? {
         didSet {
             tableView.dataSource = dataSource
@@ -35,5 +36,13 @@ class ContentTableController: UIViewController, UITableViewDelegate {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        
+        // 下拉刷新
+        tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: dataSource, refreshingAction: Selector("updateInfoList"))
+        tableView.mj_header.beginRefreshing()
+        // 上拉刷新
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: dataSource, refreshingAction: "loadMoreInfo")
+        
     }
+
 }

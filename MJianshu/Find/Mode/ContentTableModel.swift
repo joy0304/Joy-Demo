@@ -21,7 +21,8 @@ class Article: NSObject {
 // 这里等加了本地数据之后再改吧，晕乎乎的还不知道这里可以做啥
 protocol Repository{
     var pageID: Int? { get }
-    func loadArticles(pageID: Int)->[Article]
+    //func loadInfoList(pageID: Int)->[Article]
+    func loadInfoList(pageID: Int,moreArticlePage: Int)->[Article]
 }
 
 class ArticleRepository: Repository {
@@ -30,10 +31,10 @@ class ArticleRepository: Repository {
     var articleArray: NSArray?
     var emptyResult: NSArray = []
     
-    // 使用Leancloud来存储数据－获取数据
-    func loadArticles(pageID: Int)->[Article] {
+    func loadInfoList(pageID: Int,moreArticlePage: Int)->[Article]{
         let query = AVQuery(className: "FindContentModel")
         query.whereKey("pageID", equalTo: pageID)
+        query.skip = 8 * (moreArticlePage - 1)
         query.limit = 8
         query.addDescendingOrder("updatedAt")
         let jsonResult = query.findObjects()
@@ -43,7 +44,6 @@ class ArticleRepository: Repository {
         let jsonArray = jsonResult as NSArray
         articleArray = Article.mj_objectArrayWithKeyValuesArray(jsonArray.valueForKey("localData"))
         return articleArray! as! [Article]
-        
     }
 }
 

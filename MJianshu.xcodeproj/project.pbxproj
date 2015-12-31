@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B58279E1C20584200CBEC82 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B58279D1C20584200CBEC82 /* Podfile */; };
-		1B5FE8061C33F72900881FAE /* Articles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FE8041C33F72900881FAE /* Articles+CoreDataProperties.swift */; };
-		1B5FE8071C33F72900881FAE /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FE8051C33F72900881FAE /* Articles.swift */; };
-		1B5FE8091C33F77700881FAE /* LocalDataOperate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FE8081C33F77700881FAE /* LocalDataOperate.swift */; };
 		1B6E9F731C1F9E240089542C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F721C1F9E240089542C /* AppDelegate.swift */; };
 		1B6E9F7B1C1F9E240089542C /* MJianshu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F791C1F9E240089542C /* MJianshu.xcdatamodeld */; };
 		1B6E9F7D1C1F9E240089542C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9F7C1C1F9E240089542C /* Assets.xcassets */; };
@@ -42,9 +39,6 @@
 /* Begin PBXFileReference section */
 		03589F9F6EDFE73BB3C1C2E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1B58279D1C20584200CBEC82 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		1B5FE8041C33F72900881FAE /* Articles+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Articles+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1B5FE8051C33F72900881FAE /* Articles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
-		1B5FE8081C33F77700881FAE /* LocalDataOperate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataOperate.swift; sourceTree = "<group>"; };
 		1B6E9F6F1C1F9E240089542C /* MJianshu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJianshu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6E9F721C1F9E240089542C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B6E9F7A1C1F9E240089542C /* MJianshu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MJianshu.xcdatamodel; sourceTree = "<group>"; };
@@ -58,7 +52,6 @@
 		1B6E9F951C1FAFE80089542C /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		1B6E9F971C1FB2580089542C /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		1B6E9FA11C1FBB270089542C /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
-		1BB020E41C3004B00000D69B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableCell.swift; sourceTree = "<group>"; };
 		1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableModel.swift; sourceTree = "<group>"; };
 		1BF2EFAC1C2EB95800AB38FA /* MJianshu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MJianshu-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -93,7 +86,6 @@
 		1B6E9F661C1F9E240089542C = {
 			isa = PBXGroup;
 			children = (
-				1BB020E41C3004B00000D69B /* MyPlayground.playground */,
 				1B58279D1C20584200CBEC82 /* Podfile */,
 				1B6E9F711C1F9E240089542C /* MJianshu */,
 				1B6E9F701C1F9E240089542C /* Products */,
@@ -256,9 +248,6 @@
 		9B550E671C2573B900217258 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1B5FE8041C33F72900881FAE /* Articles+CoreDataProperties.swift */,
-				1B5FE8051C33F72900881FAE /* Articles.swift */,
-				1B5FE8081C33F77700881FAE /* LocalDataOperate.swift */,
 				9B550E681C25740600217258 /* FindViewModel.swift */,
 				9B550E6A1C2579F700217258 /* ThemeScrollViewModel.swift */,
 				1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */,
@@ -426,21 +415,18 @@
 				1B6E9F901C1FADAE0089542C /* FollowViewController.swift in Sources */,
 				1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */,
 				9B4BEFF41C32B5A300827771 /* TopScrollView.swift in Sources */,
-				1B5FE8061C33F72900881FAE /* Articles+CoreDataProperties.swift in Sources */,
 				1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */,
 				9B550E601C256DE200217258 /* FindViewController.swift in Sources */,
 				9B550E691C25740600217258 /* FindViewModel.swift in Sources */,
 				1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */,
 				9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */,
 				1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */,
-				1B5FE8071C33F72900881FAE /* Articles.swift in Sources */,
 				9B4BEFF21C32B58400827771 /* TopScrollViewController.swift in Sources */,
 				1B6E9F921C1FADF60089542C /* FriendsViewController.swift in Sources */,
 				9B4BEFEE1C32AE5300827771 /* BottomScrollViewController.swift in Sources */,
 				9B4BEFF01C32AEBC00827771 /* BottomScrollView.swift in Sources */,
 				9B4BEFE81C32A5B700827771 /* ContentTableDatasource.swift in Sources */,
 				9BDA78991C2479DD00B98981 /* Extension.swift in Sources */,
-				1B5FE8091C33F77700881FAE /* LocalDataOperate.swift in Sources */,
 				1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

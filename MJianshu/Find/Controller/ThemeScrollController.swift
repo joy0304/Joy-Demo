@@ -80,8 +80,8 @@ extension ThemeScrollController {
             if targetPage > topScrollViewController.lastClickedLabelTag + 1 {  // 右侧不相邻label被点击了
                 bottomScrollViewController.shouldLoadPage = false
                 let previousOffSetX = CGFloat(targetPage - 1) * ScreenWidth  // 先不带动画滑到前一页
-                if let bottomScrollView = bottomScrollViewController.view as? BottomScrollView {
-                    maskView = bottomScrollViewController.currentDisplayViewController().view
+                if let bottomScrollView = bottomScrollViewController.view as? BottomScrollView,
+                    maskView = bottomScrollViewController.currentDisplayViewController()?.view {
                     bottomScrollViewController.bindDataSourceWithViewController(tempVC, page: targetPage)
                     
                     buttomScrollView.bottomScroll.setContentOffset(CGPointMake(previousOffSetX, 0), animated: false)
@@ -92,8 +92,8 @@ extension ThemeScrollController {
             if targetPage < topScrollViewController.lastClickedLabelTag - 1 {  // 左侧不相邻label被点击了
                 bottomScrollViewController.shouldLoadPage = false
                 let previousOffSetX = CGFloat(targetPage + 1) * ScreenWidth  // 先不带动画滑到前一页
-                if let bottomScrollView = bottomScrollViewController.view as? BottomScrollView {
-                    maskView = bottomScrollViewController.currentDisplayViewController().view
+                if let bottomScrollView = bottomScrollViewController.view as? BottomScrollView,
+                    maskView = bottomScrollViewController.currentDisplayViewController()?.view {
                     bottomScrollViewController.bindDataSourceWithViewController(tempVC, page: targetPage)
                     
                     buttomScrollView.bottomScroll.setContentOffset(CGPointMake(previousOffSetX, 0), animated: false)

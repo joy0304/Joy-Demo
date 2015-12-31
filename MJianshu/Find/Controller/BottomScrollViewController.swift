@@ -138,9 +138,11 @@ extension BottomScrollViewController {
         return titleArrayLength!
     }
     
-    func currentDisplayViewController() -> ContentTableController {
-        let index = Int((visibleViewControllers.count - 1) / 2)
-        return visibleViewControllers[index]
+    func currentDisplayViewController() -> ContentTableController? {
+        for vc in visibleViewControllers {
+            if vc.pageID == currentPage { return vc }
+        }
+        return nil
     }
 }
 

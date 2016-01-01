@@ -34,9 +34,9 @@ class ArticleRepository: Repository {
     func loadInfoList(pageID: Int,moreArticlePage: Int)->[Article]{
         let query = AVQuery(className: "FindContentModel")
         query.whereKey("pageID", equalTo: pageID)
-        query.skip = 8 * (moreArticlePage - 1)
-        query.limit = 8
         query.addDescendingOrder("updatedAt")
+        query.skip = 8 * (moreArticlePage - 1)
+        query.limit = 8        
         let jsonResult = query.findObjects()
         guard jsonResult != nil else{
             return emptyResult as! [Article]

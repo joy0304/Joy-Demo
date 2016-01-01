@@ -24,6 +24,7 @@ class ContentTableDatasource: NSObject, UITableViewDataSource {
     }
     
     func updateInfoList() {
+        moreArticlePage = 1
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 2)) {
             self.articleArray = self.repository.loadInfoList(self.page,moreArticlePage: 1)
             dispatch_async(dispatch_get_main_queue()) {
@@ -33,7 +34,7 @@ class ContentTableDatasource: NSObject, UITableViewDataSource {
     }
     
     func loadMoreInfo(){
-        self.moreArticlePage += 1
+        moreArticlePage += 1
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 2)) {
             let moreArticleArray = self.repository.loadInfoList(self.page,moreArticlePage: self.moreArticlePage)
             for article in moreArticleArray{

@@ -14,12 +14,14 @@
 		1B6E9F801C1F9E240089542C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9F7E1C1F9E240089542C /* LaunchScreen.storyboard */; };
 		1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F881C1FABBA0089542C /* MainTabBarController.swift */; };
 		1B6E9F901C1FADAE0089542C /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F8F1C1FADAE0089542C /* FollowViewController.swift */; };
-		1B6E9F921C1FADF60089542C /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F911C1FADF60089542C /* FriendsViewController.swift */; };
 		1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F931C1FAE1C0089542C /* MyViewController.swift */; };
 		1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F951C1FAFE80089542C /* CommonData.swift */; };
 		1B6E9F981C1FB2580089542C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F971C1FB2580089542C /* WriteViewController.swift */; };
 		1B6E9FA21C1FBB270089542C /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9FA11C1FBB270089542C /* Write.storyboard */; };
 		1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */; };
+		1BD5B4FA1C37DE6C00DD03E1 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5B4F91C37DE6C00DD03E1 /* FriendsViewController.swift */; };
+		1BD5B5041C37E4D900DD03E1 /* FriendsTableDatasourese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5B5031C37E4D900DD03E1 /* FriendsTableDatasourese.swift */; };
+		1BD5B5061C37E6C900DD03E1 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5B5051C37E6C900DD03E1 /* FriendsViewModel.swift */; };
 		1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */; };
 		9B4BEFE81C32A5B700827771 /* ContentTableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BEFE71C32A5B700827771 /* ContentTableDatasource.swift */; };
 		9B4BEFEE1C32AE5300827771 /* BottomScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BEFED1C32AE5300827771 /* BottomScrollViewController.swift */; };
@@ -46,13 +48,15 @@
 		1B6E9F7F1C1F9E240089542C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B6E9F811C1F9E240089542C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B6E9F881C1FABBA0089542C /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		1B6E9F8F1C1FADAE0089542C /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
-		1B6E9F911C1FADF60089542C /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
-		1B6E9F931C1FAE1C0089542C /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		1B6E9F8F1C1FADAE0089542C /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowViewController.swift; path = MJianshu/FollowViewController.swift; sourceTree = SOURCE_ROOT; };
+		1B6E9F931C1FAE1C0089542C /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyViewController.swift; path = MJianshu/MyViewController.swift; sourceTree = SOURCE_ROOT; };
 		1B6E9F951C1FAFE80089542C /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
-		1B6E9F971C1FB2580089542C /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
-		1B6E9FA11C1FBB270089542C /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
+		1B6E9F971C1FB2580089542C /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteViewController.swift; path = ../../../WriteViewController.swift; sourceTree = "<group>"; };
+		1B6E9FA11C1FBB270089542C /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Write.storyboard; path = ../../Write.storyboard; sourceTree = "<group>"; };
 		1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableCell.swift; sourceTree = "<group>"; };
+		1BD5B4F91C37DE6C00DD03E1 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsViewController.swift; path = ../FriendsViewController.swift; sourceTree = "<group>"; };
+		1BD5B5031C37E4D900DD03E1 /* FriendsTableDatasourese.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableDatasourese.swift; sourceTree = "<group>"; };
+		1BD5B5051C37E6C900DD03E1 /* FriendsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		1BF2EFAA1C2E9B0F00AB38FA /* ContentTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableModel.swift; sourceTree = "<group>"; };
 		1BF2EFAC1C2EB95800AB38FA /* MJianshu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MJianshu-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B4BEFE71C32A5B700827771 /* ContentTableDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableDatasource.swift; sourceTree = "<group>"; };
@@ -107,9 +111,11 @@
 			children = (
 				1B6E9F721C1F9E240089542C /* AppDelegate.swift */,
 				9B550E541C256D6D00217258 /* Find */,
+				1BD5B5021C37E0B500DD03E1 /* Follow */,
+				1BD5B4FF1C37E03700DD03E1 /* Write */,
+				1BD5B4F61C37DDF500DD03E1 /* Friends */,
+				1BD5B5011C37E09A00DD03E1 /* My */,
 				9BDA78971C2479BC00B98981 /* Extension */,
-				1B6E9F8C1C1FACFF0089542C /* Controller */,
-				1B6E9F8B1C1FACF80089542C /* View */,
 				1B6E9F871C1FAB740089542C /* Common */,
 				1BD96A841C20FB7E00371E4E /* Others */,
 			);
@@ -125,71 +131,72 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
-		1B6E9F8B1C1FACF80089542C /* View */ = {
+		1BD5B4F61C37DDF500DD03E1 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				1B6E9FA01C1FBB140089542C /* Write */,
+				1BD5B4FC1C37DFA500DD03E1 /* Model */,
+				1BD5B4FE1C37DFB600DD03E1 /* View */,
+				1BD5B4FD1C37DFAF00DD03E1 /* Controller */,
 			);
-			name = View;
+			path = Friends;
 			sourceTree = "<group>";
 		};
-		1B6E9F8C1C1FACFF0089542C /* Controller */ = {
+		1BD5B4FC1C37DFA500DD03E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1B6E9F9D1C1FB84B0089542C /* Write */,
-				1B6E9F9C1C1FB8450089542C /* My */,
-				1B6E9F9B1C1FB83D0089542C /* Friends */,
-				1B6E9F9A1C1FB8340089542C /* Follow */,
-				1B6E9F991C1FB80E0089542C /* Find */,
+				1BD5B5031C37E4D900DD03E1 /* FriendsTableDatasourese.swift */,
+				1BD5B5051C37E6C900DD03E1 /* FriendsViewModel.swift */,
 			);
-			name = Controller;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		1B6E9F991C1FB80E0089542C /* Find */ = {
+		1BD5B4FD1C37DFAF00DD03E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BD5B4F91C37DE6C00DD03E1 /* FriendsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1BD5B4FE1C37DFB600DD03E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Find;
+			path = View;
 			sourceTree = "<group>";
 		};
-		1B6E9F9A1C1FB8340089542C /* Follow */ = {
+		1BD5B4FF1C37E03700DD03E1 /* Write */ = {
 			isa = PBXGroup;
 			children = (
-				1B6E9F8F1C1FADAE0089542C /* FollowViewController.swift */,
+				1B6E9FA11C1FBB270089542C /* Write.storyboard */,
+				1BD5B5001C37E04D00DD03E1 /* Controller */,
 			);
-			name = Follow;
+			name = Write;
+			path = Friends/Write;
 			sourceTree = "<group>";
 		};
-		1B6E9F9B1C1FB83D0089542C /* Friends */ = {
-			isa = PBXGroup;
-			children = (
-				1B6E9F911C1FADF60089542C /* FriendsViewController.swift */,
-			);
-			name = Friends;
-			sourceTree = "<group>";
-		};
-		1B6E9F9C1C1FB8450089542C /* My */ = {
-			isa = PBXGroup;
-			children = (
-				1B6E9F931C1FAE1C0089542C /* MyViewController.swift */,
-			);
-			name = My;
-			sourceTree = "<group>";
-		};
-		1B6E9F9D1C1FB84B0089542C /* Write */ = {
+		1BD5B5001C37E04D00DD03E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				1B6E9F971C1FB2580089542C /* WriteViewController.swift */,
 			);
-			name = Write;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		1B6E9FA01C1FBB140089542C /* Write */ = {
+		1BD5B5011C37E09A00DD03E1 /* My */ = {
 			isa = PBXGroup;
 			children = (
-				1B6E9FA11C1FBB270089542C /* Write.storyboard */,
+				1B6E9F931C1FAE1C0089542C /* MyViewController.swift */,
 			);
-			name = Write;
+			path = My;
+			sourceTree = "<group>";
+		};
+		1BD5B5021C37E0B500DD03E1 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				1B6E9F8F1C1FADAE0089542C /* FollowViewController.swift */,
+			);
+			path = Follow;
 			sourceTree = "<group>";
 		};
 		1BD96A841C20FB7E00371E4E /* Others */ = {
@@ -406,6 +413,7 @@
 				1B6E9F731C1F9E240089542C /* AppDelegate.swift in Sources */,
 				1B6E9F901C1FADAE0089542C /* FollowViewController.swift in Sources */,
 				1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */,
+				1BD5B5061C37E6C900DD03E1 /* FriendsViewModel.swift in Sources */,
 				9B4BEFF41C32B5A300827771 /* TopScrollView.swift in Sources */,
 				1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */,
 				9B550E601C256DE200217258 /* FindViewController.swift in Sources */,
@@ -413,8 +421,9 @@
 				1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */,
 				9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */,
 				1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */,
+				1BD5B4FA1C37DE6C00DD03E1 /* FriendsViewController.swift in Sources */,
+				1BD5B5041C37E4D900DD03E1 /* FriendsTableDatasourese.swift in Sources */,
 				9B4BEFF21C32B58400827771 /* TopScrollViewController.swift in Sources */,
-				1B6E9F921C1FADF60089542C /* FriendsViewController.swift in Sources */,
 				9B4BEFEE1C32AE5300827771 /* BottomScrollViewController.swift in Sources */,
 				9B4BEFF01C32AEBC00827771 /* BottomScrollView.swift in Sources */,
 				9B4BEFE81C32A5B700827771 /* ContentTableDatasource.swift in Sources */,

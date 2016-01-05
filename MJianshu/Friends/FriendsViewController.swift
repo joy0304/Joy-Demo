@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendsViewController: UIViewController {
+class FriendsViewController: UIViewController,UITableViewDelegate{
     var tableView = UITableView()
     var dataSourse = FriendsTableDatasourese()
     
@@ -22,6 +22,7 @@ class FriendsViewController: UIViewController {
 
     func setUpTableView(){
         tableView.dataSource = dataSourse
+        tableView.delegate = self
         
         view.addSubview(tableView)
         tableView.snp_makeConstraints { (make) -> Void in
@@ -33,14 +34,18 @@ class FriendsViewController: UIViewController {
     }
 }
 
-//extension FriendsViewController: UITableViewDelegate{
-//    
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//    
-//        if indexPath.section == 0{
-//            
-//        }
-//    }
-//    
+extension FriendsViewController{
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+        if indexPath.section == 0{
+            if indexPath.row == 0{
+                let friendsDynamicVC = FriednsDynamicController()
+                navigationController?.pushViewController(friendsDynamicVC, animated: true)
+            }
+            
+        }
+    }
+    
 
-//}
+}

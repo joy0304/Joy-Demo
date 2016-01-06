@@ -1,7 +1,7 @@
 # MJianshu
 #Swift高仿“简书”，功能正在进行逐渐的完善，希望您可以多多给建议，让我们一起做出更完善的开源项目。
 ![大致浏览图](http://ww3.sinaimg.cn/large/005UN8IAjw1ezj6dhgtdcg307o0e7k2d.gif)
-
+![大致图](http://ww4.sinaimg.cn/large/005UN8IAjw1ezpqkj96smg307o0e7tg5.gif)
 
 #####  希望小手能顺便点一下右上角的⭐️Star ^_^，朋友的鼓励和支持是我们继续分享的动力
 

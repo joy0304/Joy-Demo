@@ -10,11 +10,14 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     let tabbarBigImageLength: CGFloat = 43
+    var button: UIButton!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addAllChildViewController()
     }
+    
 }
 
 // MARK: - 子视图
@@ -67,14 +70,14 @@ extension MainTabBarController{
      :param: view        这个按钮被加载的视图
      */
     func addCenterButton(btnImage buttonImage: UIImage, selectedImg selectedimg: UIImage, selector: String, view: UIView) {
-        let button:UIButton = UIButton(type: UIButtonType.Custom)
+        button = UIButton(type: UIButtonType.Custom)
         button.frame = CGRectMake(0, 0, tabbarBigImageLength, tabbarBigImageLength)
         button.center = tabBar.center
         view.addSubview(button)
 
         button.setImage(buttonImage, forState: UIControlState.Normal)
         button.setImage(selectedimg, forState: UIControlState.Selected)
-
+        
         button.adjustsImageWhenDisabled = true  // 设置选中时阴影
         button.addTarget(self, action: Selector(selector), forControlEvents:UIControlEvents.TouchUpInside)
     }

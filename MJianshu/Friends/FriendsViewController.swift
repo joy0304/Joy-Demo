@@ -41,9 +41,12 @@ extension FriendsViewController{
         if indexPath.section == 0{
             if indexPath.row == 0{
                 let friendsDynamicVC = FriednsDynamicController()
-                navigationController?.pushViewController(friendsDynamicVC, animated: true)
+                navigationController?.pushViewControllerWithTabbarHidden(friendsDynamicVC, animated: true)
             }
-            
+        }
+        else{
+            let jianMessageVC = JianMessageController()
+            navigationController?.pushViewControllerWithTabbarHidden(jianMessageVC, animated: true)
         }
     }
     

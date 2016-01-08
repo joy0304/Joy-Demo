@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="KGk-i7-Jjw" customClass="JianMessageCell" customModule="MJianshu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gJo-SI-dSB">
+                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="LTH-d8-nnU"/>
+                            <constraint firstAttribute="width" constant="60" id="QWm-mN-S2c"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ko-Hu-V4v">
+                        <rect key="frame" x="85" y="10" width="150" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Uai-eP-a3Y"/>
+                            <constraint firstAttribute="width" constant="150" id="kIE-MH-gdo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2星期前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tge-bM-x3f">
+                        <rect key="frame" x="235" y="10" width="70" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="X3U-3A-CZ6"/>
+                            <constraint firstAttribute="height" constant="21" id="ajm-ig-Wl3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msc-3V-m6d">
+                        <rect key="frame" x="85" y="39" width="200" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Ndx-oF-e1Y"/>
+                            <constraint firstAttribute="width" constant="200" id="Ocf-vp-Kt9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_jianxin_message_line" translatesAutoresizingMaskIntoConstraints="NO" id="BSd-sx-lpy">
+                        <rect key="frame" x="80" y="78.5" width="240" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Xdg-jo-Yv6"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="BSd-sx-lpy" secondAttribute="trailing" id="1Xe-n7-jQ3"/>
+                    <constraint firstItem="BSd-sx-lpy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="80" id="7Kw-bw-O2i"/>
+                    <constraint firstAttribute="trailing" secondItem="tge-bM-x3f" secondAttribute="trailing" constant="15" id="MSS-Of-iHW"/>
+                    <constraint firstItem="1Ko-Hu-V4v" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="OMv-8r-cDH"/>
+                    <constraint firstItem="Msc-3V-m6d" firstAttribute="top" secondItem="1Ko-Hu-V4v" secondAttribute="bottom" constant="8" id="Sfs-pR-pfn"/>
+                    <constraint firstAttribute="bottom" secondItem="BSd-sx-lpy" secondAttribute="bottom" id="bCf-CC-dHO"/>
+                    <constraint firstItem="1Ko-Hu-V4v" firstAttribute="leading" secondItem="gJo-SI-dSB" secondAttribute="trailing" constant="15" id="dJB-B0-ZmZ"/>
+                    <constraint firstItem="gJo-SI-dSB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="fXc-TO-ysI"/>
+                    <constraint firstItem="Msc-3V-m6d" firstAttribute="leading" secondItem="gJo-SI-dSB" secondAttribute="trailing" constant="15" id="ijf-rd-3iF"/>
+                    <constraint firstAttribute="bottom" secondItem="gJo-SI-dSB" secondAttribute="bottom" constant="10" id="riK-On-eMA"/>
+                    <constraint firstItem="tge-bM-x3f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="zaL-7E-OB4"/>
+                    <constraint firstItem="gJo-SI-dSB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="zvJ-hc-XOc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="Msc-3V-m6d" id="cjS-to-9pN"/>
+                <outlet property="previewImage" destination="gJo-SI-dSB" id="jvp-a9-Gxj"/>
+                <outlet property="timeLabel" destination="tge-bM-x3f" id="bGN-Pm-MIn"/>
+                <outlet property="userNameLabel" destination="1Ko-Hu-V4v" id="qbY-2G-kL8"/>
+            </connections>
+            <point key="canvasLocation" x="19" y="340"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img_jianxin_message_line" width="401" height="3"/>
+    </resources>
+</document>

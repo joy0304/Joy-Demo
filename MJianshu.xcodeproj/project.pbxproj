@@ -21,6 +21,15 @@
 		1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F951C1FAFE80089542C /* CommonData.swift */; };
 		1B6E9F981C1FB2580089542C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F971C1FB2580089542C /* WriteViewController.swift */; };
 		1B6E9FA21C1FBB270089542C /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9FA11C1FBB270089542C /* Write.storyboard */; };
+		1B98CC0E1C3FBF7E00169DFD /* JianMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC0D1C3FBF7E00169DFD /* JianMessageController.swift */; };
+		1B98CC111C3FC9FD00169DFD /* JianMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC0F1C3FC9FD00169DFD /* JianMessageCell.swift */; };
+		1B98CC121C3FC9FD00169DFD /* JianMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B98CC101C3FC9FD00169DFD /* JianMessageCell.xib */; };
+		1B98CC141C3FCF4E00169DFD /* JianMessageDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC131C3FCF4E00169DFD /* JianMessageDataSourse.swift */; };
+		1B98CC161C3FD93500169DFD /* ChatTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC151C3FD93500169DFD /* ChatTableController.swift */; };
+		1B98CC181C3FD95D00169DFD /* ChatMessageLeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC171C3FD95D00169DFD /* ChatMessageLeftCell.swift */; };
+		1B98CC1A1C3FD97100169DFD /* ChatMessageRightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC191C3FD97100169DFD /* ChatMessageRightCell.swift */; };
+		1B98CC1C1C3FDC6600169DFD /* UIInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC1B1C3FDC6600169DFD /* UIInputView.swift */; };
+		1B98CC1E1C3FDC8C00169DFD /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC1D1C3FDC8C00169DFD /* ChatModel.swift */; };
 		1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */; };
 		1BD5B4FA1C37DE6C00DD03E1 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5B4F91C37DE6C00DD03E1 /* FriendsViewController.swift */; };
 		1BD5B5041C37E4D900DD03E1 /* FriendsTableDatasourese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5B5031C37E4D900DD03E1 /* FriendsTableDatasourese.swift */; };
@@ -59,6 +68,15 @@
 		1B6E9F951C1FAFE80089542C /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		1B6E9F971C1FB2580089542C /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteViewController.swift; path = ../../../WriteViewController.swift; sourceTree = "<group>"; };
 		1B6E9FA11C1FBB270089542C /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Write.storyboard; path = ../../Write.storyboard; sourceTree = "<group>"; };
+		1B98CC0D1C3FBF7E00169DFD /* JianMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JianMessageController.swift; sourceTree = "<group>"; };
+		1B98CC0F1C3FC9FD00169DFD /* JianMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JianMessageCell.swift; sourceTree = "<group>"; };
+		1B98CC101C3FC9FD00169DFD /* JianMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JianMessageCell.xib; sourceTree = "<group>"; };
+		1B98CC131C3FCF4E00169DFD /* JianMessageDataSourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JianMessageDataSourse.swift; sourceTree = "<group>"; };
+		1B98CC151C3FD93500169DFD /* ChatTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableController.swift; sourceTree = "<group>"; };
+		1B98CC171C3FD95D00169DFD /* ChatMessageLeftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageLeftCell.swift; sourceTree = "<group>"; };
+		1B98CC191C3FD97100169DFD /* ChatMessageRightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageRightCell.swift; sourceTree = "<group>"; };
+		1B98CC1B1C3FDC6600169DFD /* UIInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInputView.swift; sourceTree = "<group>"; };
+		1B98CC1D1C3FDC8C00169DFD /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		1BC4F6E71C2D22570018F643 /* ContentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableCell.swift; sourceTree = "<group>"; };
 		1BD5B4F91C37DE6C00DD03E1 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsViewController.swift; path = ../FriendsViewController.swift; sourceTree = "<group>"; };
 		1BD5B5031C37E4D900DD03E1 /* FriendsTableDatasourese.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableDatasourese.swift; sourceTree = "<group>"; };
@@ -137,6 +155,18 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		1B98CC0C1C3FBF0A00169DFD /* JianXin */ = {
+			isa = PBXGroup;
+			children = (
+				1B98CC0F1C3FC9FD00169DFD /* JianMessageCell.swift */,
+				1B98CC101C3FC9FD00169DFD /* JianMessageCell.xib */,
+				1B98CC171C3FD95D00169DFD /* ChatMessageLeftCell.swift */,
+				1B98CC191C3FD97100169DFD /* ChatMessageRightCell.swift */,
+				1B98CC1B1C3FDC6600169DFD /* UIInputView.swift */,
+			);
+			name = JianXin;
+			sourceTree = "<group>";
+		};
 		1BD5B4F61C37DDF500DD03E1 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +183,8 @@
 				1BD5B5031C37E4D900DD03E1 /* FriendsTableDatasourese.swift */,
 				1BD5B5051C37E6C900DD03E1 /* FriendsViewModel.swift */,
 				1B587EC21C3BC10F0034E116 /* FriendsDynamicDataSourse.swift */,
+				1B98CC131C3FCF4E00169DFD /* JianMessageDataSourse.swift */,
+				1B98CC1D1C3FDC8C00169DFD /* ChatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +194,8 @@
 			children = (
 				1BD5B4F91C37DE6C00DD03E1 /* FriendsViewController.swift */,
 				1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */,
+				1B98CC0D1C3FBF7E00169DFD /* JianMessageController.swift */,
+				1B98CC151C3FD93500169DFD /* ChatTableController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +203,7 @@
 		1BD5B4FE1C37DFB600DD03E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1B98CC0C1C3FBF0A00169DFD /* JianXin */,
 				1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */,
 			);
 			path = View;
@@ -354,6 +389,7 @@
 			files = (
 				1B6E9F801C1F9E240089542C /* LaunchScreen.storyboard in Resources */,
 				1B6E9F7D1C1F9E240089542C /* Assets.xcassets in Resources */,
+				1B98CC121C3FC9FD00169DFD /* JianMessageCell.xib in Resources */,
 				1B58279E1C20584200CBEC82 /* Podfile in Resources */,
 				1B6E9FA21C1FBB270089542C /* Write.storyboard in Resources */,
 			);
@@ -418,24 +454,32 @@
 				9B550E6B1C2579F700217258 /* ThemeScrollViewModel.swift in Sources */,
 				1B6E9F7B1C1F9E240089542C /* MJianshu.xcdatamodeld in Sources */,
 				9B550E661C256E2500217258 /* FindView.swift in Sources */,
+				1B98CC181C3FD95D00169DFD /* ChatMessageLeftCell.swift in Sources */,
 				9B550E5F1C256DE200217258 /* ContentTableController.swift in Sources */,
 				1B6E9F731C1F9E240089542C /* AppDelegate.swift in Sources */,
 				1B6E9F901C1FADAE0089542C /* FollowViewController.swift in Sources */,
 				1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */,
 				1BD5B5061C37E6C900DD03E1 /* FriendsViewModel.swift in Sources */,
+				1B98CC1E1C3FDC8C00169DFD /* ChatModel.swift in Sources */,
 				9B4BEFF41C32B5A300827771 /* TopScrollView.swift in Sources */,
+				1B98CC161C3FD93500169DFD /* ChatTableController.swift in Sources */,
 				1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */,
 				9B550E601C256DE200217258 /* FindViewController.swift in Sources */,
 				9B550E691C25740600217258 /* FindViewModel.swift in Sources */,
+				1B98CC111C3FC9FD00169DFD /* JianMessageCell.swift in Sources */,
 				1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */,
+				1B98CC1C1C3FDC6600169DFD /* UIInputView.swift in Sources */,
 				1B587EC31C3BC10F0034E116 /* FriendsDynamicDataSourse.swift in Sources */,
 				9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */,
 				1B16C5191C3B5BB50043C323 /* DynamicLineCell.swift in Sources */,
+				1B98CC0E1C3FBF7E00169DFD /* JianMessageController.swift in Sources */,
 				1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */,
 				1BD5B4FA1C37DE6C00DD03E1 /* FriendsViewController.swift in Sources */,
+				1B98CC1A1C3FD97100169DFD /* ChatMessageRightCell.swift in Sources */,
 				1BD5B5041C37E4D900DD03E1 /* FriendsTableDatasourese.swift in Sources */,
 				9B4BEFF21C32B58400827771 /* TopScrollViewController.swift in Sources */,
 				9B4BEFEE1C32AE5300827771 /* BottomScrollViewController.swift in Sources */,
+				1B98CC141C3FCF4E00169DFD /* JianMessageDataSourse.swift in Sources */,
 				9B4BEFF01C32AEBC00827771 /* BottomScrollView.swift in Sources */,
 				9B4BEFE81C32A5B700827771 /* ContentTableDatasource.swift in Sources */,
 				1B16C5171C3B5B2C0043C323 /* FriednsDynamicController.swift in Sources */,

@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icon_tabbar_input_send_inactive.png",
+      "filename" : "img_jianxin_message_line.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icon_tabbar_input_send_inactive@2x.png",
       "scale" : "2x"
     },
     {

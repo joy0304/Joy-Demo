@@ -67,7 +67,6 @@ extension FriendsTableDatasourese {
         if indexPath.section == 0{
             cell?.imageView?.image = UIImage(named: friendsNotifyIconArray[indexPath.row])
             cell?.textLabel?.text = friendsNotifyTitleArray[indexPath.row]
-            //cell?.detailTextLabel?.text = detailText[indexPath.row]
         }
         else{
             cell?.imageView?.image = UIImage(named: messageIconArray[indexPath.row])

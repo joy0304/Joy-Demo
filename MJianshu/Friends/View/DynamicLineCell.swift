@@ -20,9 +20,9 @@ class DynamicLineCell: UITableViewCell {
     // 时间线
     var forepartTimeLineLabel: UILabel!
     var backpartTimeLineLabel: UILabel!
-    
+    // 高度约束
     var heightContraint: Constraint?
-    
+    // 间距
     let gapSpace: CGFloat = 25
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -86,7 +86,7 @@ class DynamicLineCell: UITableViewCell {
         }
 
         containView = UIView()
-        containView.backgroundColor = UIColor.lightGrayColor()
+        containView.backgroundColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 0.3)
         containView.layer.cornerRadius = 3
         contentView.addSubview(containView)
         containView.snp_makeConstraints { (make) -> Void in
@@ -121,10 +121,8 @@ class DynamicLineCell: UITableViewCell {
             make.bottom.equalTo(contentView)
 
         }
-        
-
-        
     }
+    
     func cellType(bool: Bool){
 
         if bool{
@@ -133,7 +131,6 @@ class DynamicLineCell: UITableViewCell {
         else{
             self.heightContraint?.deactivate()
         }
-        
     }
 
 }

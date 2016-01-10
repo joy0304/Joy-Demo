@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B16C5171C3B5B2C0043C323 /* FriednsDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */; };
 		1B16C5191C3B5BB50043C323 /* DynamicLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */; };
+		1B2DA14A1C420DF2001C5199 /* ChatTableDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */; };
 		1B58279E1C20584200CBEC82 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B58279D1C20584200CBEC82 /* Podfile */; };
 		1B587EC31C3BC10F0034E116 /* FriendsDynamicDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B587EC21C3BC10F0034E116 /* FriendsDynamicDataSourse.swift */; };
 		1B6E9F731C1F9E240089542C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F721C1F9E240089542C /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		03589F9F6EDFE73BB3C1C2E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriednsDynamicController.swift; sourceTree = "<group>"; };
 		1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLineCell.swift; sourceTree = "<group>"; };
+		1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableDataSourse.swift; sourceTree = "<group>"; };
 		1B58279D1C20584200CBEC82 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1B587EC21C3BC10F0034E116 /* FriendsDynamicDataSourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsDynamicDataSourse.swift; sourceTree = "<group>"; };
 		1B6E9F6F1C1F9E240089542C /* MJianshu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJianshu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 				1B587EC21C3BC10F0034E116 /* FriendsDynamicDataSourse.swift */,
 				1B98CC131C3FCF4E00169DFD /* JianMessageDataSourse.swift */,
 				1B98CC1D1C3FDC8C00169DFD /* ChatModel.swift */,
+				1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */,
 				1B16C5191C3B5BB50043C323 /* DynamicLineCell.swift in Sources */,
 				1B98CC0E1C3FBF7E00169DFD /* JianMessageController.swift in Sources */,
+				1B2DA14A1C420DF2001C5199 /* ChatTableDataSourse.swift in Sources */,
 				1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */,
 				1BD5B4FA1C37DE6C00DD03E1 /* FriendsViewController.swift in Sources */,
 				1B98CC1A1C3FD97100169DFD /* ChatMessageRightCell.swift in Sources */,

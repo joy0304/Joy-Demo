@@ -41,7 +41,7 @@ class ChatMessageLeftCell: UITableViewCell {
         headImageView.layer.borderColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.5).CGColor
         headImageView.layer.cornerRadius = 25
         headImageView.clipsToBounds = true
-        headImageView.setImage(UIImage(named: "img_avatar_message_default"), forState: UIControlState.Normal)
+        headImageView.setImage(UIImage(named: "previewTemp"), forState: UIControlState.Normal)
         headImageView.snp_makeConstraints { (make) -> Void in
             make.width.equalTo(50)
             make.height.equalTo(50)

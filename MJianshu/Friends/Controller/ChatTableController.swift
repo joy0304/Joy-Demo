@@ -8,15 +8,11 @@
 
 import UIKit
 
-
-private let leftCellId = "UUChatLeftMessageCell"
-private let rightCellId = "UUChatRightMessageCell"
-
-class ChatTableController: UIViewController ,UITableViewDataSource ,UITableViewDelegate{
+class ChatTableController: UIViewController ,UITableViewDelegate{
 
     var chatTableView: UITableView!
     var inputBackView: UIInputView!
-    var dataArray: [AnyObject]!
+    var dataSourse = ChatTableDataSourse()
     var inputViewConstraint: NSLayoutConstraint? = nil
 
     override func viewWillAppear(animated: Bool) {
@@ -29,26 +25,18 @@ class ChatTableController: UIViewController ,UITableViewDataSource ,UITableViewD
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        self.dataArray = ChatModel.creatRandomArray(count: 10)
-                initBaseViews()
-        
-        chatTableView.registerClass(ChatMessageLeftCell.classForKeyedArchiver(), forCellReuseIdentifier: leftCellId)
-        chatTableView.registerClass(ChatMessageRightCell.classForKeyedArchiver(), forCellReuseIdentifier: rightCellId)
+        setupSubViews()
+        chatTableView.dataSource = dataSourse
+        chatTableView.delegate = self
         chatTableView.estimatedRowHeight = 100
 
     }
     
-    
-    
-    func initBaseViews(){
+    func setupSubViews(){
         inputBackView = UIInputView()
         self.view.addSubview(inputBackView)
-        
         inputViewConstraint = NSLayoutConstraint(
             item: inputBackView,
             attribute: NSLayoutAttribute.Bottom,
@@ -63,16 +51,15 @@ class ChatTableController: UIViewController ,UITableViewDataSource ,UITableViewD
         }
         view.addConstraint(inputViewConstraint!)
         
-        inputBackView.sendMessage { (text, textView) -> Void in
-            self.dataArray.append(ChatModel.creatMessageFromMeByText(text))
-            self.chatTableView.reloadData()
-            self.chatTableView.scrollToBottom(animation: true)
+        inputBackView.sendMessage { [weak self](text, textView) -> Void in
+            self!.dataSourse.dataArray.append(ChatModel.creatMessageFromMeByText(text))
+            self!.chatTableView.reloadData()
+            self!.chatTableView.scrollToBottom(animation: true)
             
         }
         
         chatTableView = UITableView.init(frame: CGRectZero, style: .Plain)
-        chatTableView.dataSource = self
-        chatTableView.delegate = self
+
         chatTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         chatTableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
         chatTableView.estimatedRowHeight = 60
@@ -88,25 +75,9 @@ class ChatTableController: UIViewController ,UITableViewDataSource ,UITableViewD
         return UIScreen.mainScreen().bounds.size
     }
     
-    // tableview delegate & dataSource
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataArray.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let model = dataArray[indexPath.row] as! ChatModel
-        if model.chatFrom == .Me {
-            let cell:ChatMessageRightCell = tableView.dequeueReusableCellWithIdentifier(rightCellId) as! ChatMessageRightCell
-            cell.configUIWithModel(model)
-            return cell
-        }
-        else {
-            let cell:ChatMessageLeftCell = tableView.dequeueReusableCellWithIdentifier(leftCellId) as! ChatMessageLeftCell
-            cell.configUIWithModel(model)
-            return cell
-        }
-    }
+}
+
+extension ChatTableController{
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.view.endEditing(true)
@@ -128,5 +99,5 @@ class ChatTableController: UIViewController ,UITableViewDataSource ,UITableViewD
         })
     }
 
-
 }
+

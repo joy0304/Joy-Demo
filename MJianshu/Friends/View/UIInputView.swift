@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias TextBlock  = (text:String,    textView:UITextView)->Void
+typealias TextBlock  = (text: String ,textView: UITextView)->Void
 
 class UIInputView: UIToolbar ,UITextViewDelegate{
 
@@ -43,7 +43,6 @@ class UIInputView: UIToolbar ,UITextViewDelegate{
         rightButton = UIButton()
         addSubview(rightButton)
         rightButton.setImage(UIImage(named: "icon_tabbar_input_send"), forState: .Normal)
-        //        rightButton.addTarget(self, action: Selector("sendImage"), forControlEvents: .TouchUpInside)
         rightButton.snp_makeConstraints { (make) -> Void in
             make.trailing.bottom.equalTo(self).offset(-8)
             make.height.width.equalTo(30)

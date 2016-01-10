@@ -10,6 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     let tabbarBigImageLength: CGFloat = 43
+    let centerButtonIndex = 2
     var button: UIButton!
         
     override func viewDidLoad() {
@@ -62,8 +63,17 @@ extension MainTabBarController{
      点击按钮触发的函数，present写新文章的页面
      */
     func writeArticleButtonClicked() {
-        let writeViewController = UIStoryboard(name: "Write", bundle: nil).instantiateViewControllerWithIdentifier("writeViewController")
-        self.presentViewController(writeViewController, animated: true, completion: nil)
+        let currentSelectedIndex = selectedIndex  // 当前选中的tabbarItem的index
+        let tempView = viewControllers![currentSelectedIndex].view  // 当前显示的view
+        
+        if let writeViewController = UIStoryboard(name: "Write", bundle: nil).instantiateViewControllerWithIdentifier("writeViewController") as? WriteViewController {
+            viewControllers![centerButtonIndex].view.addSubview(tempView)  // 用当前的view覆盖centerButton背后的view，防止出现黑屏
+            
+            writeViewController.dismissViewControllerBlock = { [weak self] in
+                self?.selectedIndex = currentSelectedIndex  // dismiss之前先切换到当前页面
+            }
+            self.presentViewController(writeViewController, animated: true, completion: nil)
+        }
     }
     
     /**
@@ -85,7 +95,7 @@ extension MainTabBarController{
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         switch item.tag {
-        case 2: writeArticleButtonClicked()
+        case centerButtonIndex: writeArticleButtonClicked()
         default: break
         }
     }

@@ -49,7 +49,7 @@ extension MainTabBarController{
         childVC.tabBarItem.image = UIImage(named: image)
         childVC.tabBarItem.selectedImage = UIImage(named: selected)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         // 设置点击之后字体的颜色
-        childVC.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orangeColor()], forState:UIControlState.Selected)
+        childVC.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: ColorManger.mainColor()], forState:UIControlState.Selected)
         
         // 设置导航控制器
         let childNaviagation = UINavigationController(rootViewController: childVC)

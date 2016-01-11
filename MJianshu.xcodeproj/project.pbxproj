@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0422AD681C4130D3007190F5 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422AD671C4130D3007190F5 /* FollowViewController.swift */; };
+		04FC64481C43DD3C000B2310 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC64471C43DD3C000B2310 /* ColorManager.swift */; };
 		1B16C5171C3B5B2C0043C323 /* FriednsDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */; };
 		1B16C5191C3B5BB50043C323 /* DynamicLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */; };
 		1B2DA14A1C420DF2001C5199 /* ChatTableDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		03589F9F6EDFE73BB3C1C2E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		0422AD671C4130D3007190F5 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		04FC64471C43DD3C000B2310 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriednsDynamicController.swift; sourceTree = "<group>"; };
 		1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLineCell.swift; sourceTree = "<group>"; };
 		1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableDataSourse.swift; sourceTree = "<group>"; };
@@ -147,11 +149,6 @@
 				1B6E9F721C1F9E240089542C /* AppDelegate.swift */,
 				9BD209271C41EE4700CCFEDA /* Write */,
 				9B550E541C256D6D00217258 /* Find */,
-<<<<<<< HEAD
-				1BD5B4FF1C37E03700DD03E1 /* Write */,
-=======
-				1BD5B5021C37E0B500DD03E1 /* Follow */,
->>>>>>> f920c2d18523968ccea449e9710005c5daeae36b
 				1BD5B4F61C37DDF500DD03E1 /* Friends */,
 				1BD5B5011C37E09A00DD03E1 /* My */,
 				9BDA78971C2479BC00B98981 /* Extension */,
@@ -166,6 +163,7 @@
 			children = (
 				1B6E9F881C1FABBA0089542C /* MainTabBarController.swift */,
 				1B6E9F951C1FAFE80089542C /* CommonData.swift */,
+				04FC64471C43DD3C000B2310 /* ColorManager.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -486,6 +484,7 @@
 				1BD5B5041C37E4D900DD03E1 /* FriendsTableDatasourese.swift in Sources */,
 				9B4BEFF21C32B58400827771 /* TopScrollViewController.swift in Sources */,
 				0422AD681C4130D3007190F5 /* FollowViewController.swift in Sources */,
+				04FC64481C43DD3C000B2310 /* ColorManager.swift in Sources */,
 				9B4BEFEE1C32AE5300827771 /* BottomScrollViewController.swift in Sources */,
 				1B98CC141C3FCF4E00169DFD /* JianMessageDataSourse.swift in Sources */,
 				9B4BEFF01C32AEBC00827771 /* BottomScrollView.swift in Sources */,

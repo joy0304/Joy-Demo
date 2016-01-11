@@ -10,6 +10,7 @@
 		0422AD681C4130D3007190F5 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422AD671C4130D3007190F5 /* FollowViewController.swift */; };
 		1B16C5171C3B5B2C0043C323 /* FriednsDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */; };
 		1B16C5191C3B5BB50043C323 /* DynamicLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */; };
+		1B2DA14A1C420DF2001C5199 /* ChatTableDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */; };
 		1B58279E1C20584200CBEC82 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B58279D1C20584200CBEC82 /* Podfile */; };
 		1B587EC31C3BC10F0034E116 /* FriendsDynamicDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B587EC21C3BC10F0034E116 /* FriendsDynamicDataSourse.swift */; };
 		1B6E9F731C1F9E240089542C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F721C1F9E240089542C /* AppDelegate.swift */; };
@@ -19,8 +20,6 @@
 		1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F881C1FABBA0089542C /* MainTabBarController.swift */; };
 		1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F931C1FAE1C0089542C /* MyViewController.swift */; };
 		1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F951C1FAFE80089542C /* CommonData.swift */; };
-		1B6E9F981C1FB2580089542C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F971C1FB2580089542C /* WriteViewController.swift */; };
-		1B6E9FA21C1FBB270089542C /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9FA11C1FBB270089542C /* Write.storyboard */; };
 		1B98CC0E1C3FBF7E00169DFD /* JianMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC0D1C3FBF7E00169DFD /* JianMessageController.swift */; };
 		1B98CC111C3FC9FD00169DFD /* JianMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CC0F1C3FC9FD00169DFD /* JianMessageCell.swift */; };
 		1B98CC121C3FC9FD00169DFD /* JianMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B98CC101C3FC9FD00169DFD /* JianMessageCell.xib */; };
@@ -46,6 +45,8 @@
 		9B550E661C256E2500217258 /* FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E651C256E2500217258 /* FindView.swift */; };
 		9B550E691C25740600217258 /* FindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E681C25740600217258 /* FindViewModel.swift */; };
 		9B550E6B1C2579F700217258 /* ThemeScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B550E6A1C2579F700217258 /* ThemeScrollViewModel.swift */; };
+		9BD2092B1C41EE4700CCFEDA /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD209291C41EE4700CCFEDA /* WriteViewController.swift */; };
+		9BD2092C1C41EE4700CCFEDA /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD2092A1C41EE4700CCFEDA /* Write.storyboard */; };
 		9BDA78991C2479DD00B98981 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA78981C2479DD00B98981 /* Extension.swift */; };
 		ABCA94A5F229823DE589927B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24043546678E5D4DB0D01AB /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		0422AD671C4130D3007190F5 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriednsDynamicController.swift; sourceTree = "<group>"; };
 		1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLineCell.swift; sourceTree = "<group>"; };
+		1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableDataSourse.swift; sourceTree = "<group>"; };
 		1B58279D1C20584200CBEC82 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1B587EC21C3BC10F0034E116 /* FriendsDynamicDataSourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsDynamicDataSourse.swift; sourceTree = "<group>"; };
 		1B6E9F6F1C1F9E240089542C /* MJianshu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJianshu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,8 +68,6 @@
 		1B6E9F881C1FABBA0089542C /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1B6E9F931C1FAE1C0089542C /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyViewController.swift; path = MJianshu/MyViewController.swift; sourceTree = SOURCE_ROOT; };
 		1B6E9F951C1FAFE80089542C /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
-		1B6E9F971C1FB2580089542C /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteViewController.swift; path = ../../../WriteViewController.swift; sourceTree = "<group>"; };
-		1B6E9FA11C1FBB270089542C /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Write.storyboard; path = ../../Write.storyboard; sourceTree = "<group>"; };
 		1B98CC0D1C3FBF7E00169DFD /* JianMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JianMessageController.swift; sourceTree = "<group>"; };
 		1B98CC0F1C3FC9FD00169DFD /* JianMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JianMessageCell.swift; sourceTree = "<group>"; };
 		1B98CC101C3FC9FD00169DFD /* JianMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JianMessageCell.xib; sourceTree = "<group>"; };
@@ -94,6 +94,8 @@
 		9B550E651C256E2500217258 /* FindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
 		9B550E681C25740600217258 /* FindViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewModel.swift; sourceTree = "<group>"; };
 		9B550E6A1C2579F700217258 /* ThemeScrollViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeScrollViewModel.swift; sourceTree = "<group>"; };
+		9BD209291C41EE4700CCFEDA /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		9BD2092A1C41EE4700CCFEDA /* Write.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
 		9BDA78981C2479DD00B98981 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AED33F99691306BFD43AE82F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F24043546678E5D4DB0D01AB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,8 +145,13 @@
 			children = (
 				0422AD661C4130D3007190F5 /* Follow */,
 				1B6E9F721C1F9E240089542C /* AppDelegate.swift */,
+				9BD209271C41EE4700CCFEDA /* Write */,
 				9B550E541C256D6D00217258 /* Find */,
+<<<<<<< HEAD
 				1BD5B4FF1C37E03700DD03E1 /* Write */,
+=======
+				1BD5B5021C37E0B500DD03E1 /* Follow */,
+>>>>>>> f920c2d18523968ccea449e9710005c5daeae36b
 				1BD5B4F61C37DDF500DD03E1 /* Friends */,
 				1BD5B5011C37E09A00DD03E1 /* My */,
 				9BDA78971C2479BC00B98981 /* Extension */,
@@ -193,6 +200,7 @@
 				1B587EC21C3BC10F0034E116 /* FriendsDynamicDataSourse.swift */,
 				1B98CC131C3FCF4E00169DFD /* JianMessageDataSourse.swift */,
 				1B98CC1D1C3FDC8C00169DFD /* ChatModel.swift */,
+				1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,24 +223,6 @@
 				1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1BD5B4FF1C37E03700DD03E1 /* Write */ = {
-			isa = PBXGroup;
-			children = (
-				1B6E9FA11C1FBB270089542C /* Write.storyboard */,
-				1BD5B5001C37E04D00DD03E1 /* Controller */,
-			);
-			name = Write;
-			path = Friends/Write;
-			sourceTree = "<group>";
-		};
-		1BD5B5001C37E04D00DD03E1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				1B6E9F971C1FB2580089542C /* WriteViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		1BD5B5011C37E09A00DD03E1 /* My */ = {
@@ -298,6 +288,23 @@
 			);
 			name = Model;
 			path = Mode;
+			sourceTree = "<group>";
+		};
+		9BD209271C41EE4700CCFEDA /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				9BD209281C41EE4700CCFEDA /* Controller */,
+				9BD2092A1C41EE4700CCFEDA /* Write.storyboard */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		9BD209281C41EE4700CCFEDA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9BD209291C41EE4700CCFEDA /* WriteViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		9BDA78971C2479BC00B98981 /* Extension */ = {
@@ -388,10 +395,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B6E9F801C1F9E240089542C /* LaunchScreen.storyboard in Resources */,
+				9BD2092C1C41EE4700CCFEDA /* Write.storyboard in Resources */,
 				1B6E9F7D1C1F9E240089542C /* Assets.xcassets in Resources */,
 				1B98CC121C3FC9FD00169DFD /* JianMessageCell.xib in Resources */,
 				1B58279E1C20584200CBEC82 /* Podfile in Resources */,
-				1B6E9FA21C1FBB270089542C /* Write.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +457,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B6E9F981C1FB2580089542C /* WriteViewController.swift in Sources */,
 				9B550E6B1C2579F700217258 /* ThemeScrollViewModel.swift in Sources */,
 				1B6E9F7B1C1F9E240089542C /* MJianshu.xcdatamodeld in Sources */,
 				9B550E661C256E2500217258 /* FindView.swift in Sources */,
@@ -463,6 +469,7 @@
 				9B4BEFF41C32B5A300827771 /* TopScrollView.swift in Sources */,
 				1B98CC161C3FD93500169DFD /* ChatTableController.swift in Sources */,
 				1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */,
+				9BD2092B1C41EE4700CCFEDA /* WriteViewController.swift in Sources */,
 				9B550E601C256DE200217258 /* FindViewController.swift in Sources */,
 				9B550E691C25740600217258 /* FindViewModel.swift in Sources */,
 				1B98CC111C3FC9FD00169DFD /* JianMessageCell.swift in Sources */,
@@ -472,6 +479,7 @@
 				9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */,
 				1B16C5191C3B5BB50043C323 /* DynamicLineCell.swift in Sources */,
 				1B98CC0E1C3FBF7E00169DFD /* JianMessageController.swift in Sources */,
+				1B2DA14A1C420DF2001C5199 /* ChatTableDataSourse.swift in Sources */,
 				1BC4F6E81C2D22570018F643 /* ContentTableCell.swift in Sources */,
 				1BD5B4FA1C37DE6C00DD03E1 /* FriendsViewController.swift in Sources */,
 				1B98CC1A1C3FD97100169DFD /* ChatMessageRightCell.swift in Sources */,

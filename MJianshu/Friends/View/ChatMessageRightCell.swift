@@ -12,7 +12,6 @@ class ChatMessageRightCell: UITableViewCell {
     
     var dateLabel: UILabel!
     var headImageView: UIButton!
-    //var nameLabel: UILabel!
     var contentButton: UIButton!
     var contentLabel: UILabel!
     var imageHeightConstraint: NSLayoutConstraint!

@@ -9,6 +9,7 @@
 import UIKit
 
 class WriteViewController: UIViewController {
+    var dismissViewControllerBlock: (() -> ()) = {}
     //需要修改背景色
     //
     ///
@@ -18,10 +19,12 @@ class WriteViewController: UIViewController {
         }
     }
     @IBAction func cancelButton(sender: AnyObject) {
+        dismissViewControllerBlock()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBOutlet weak var doneButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

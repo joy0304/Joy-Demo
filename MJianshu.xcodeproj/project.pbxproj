@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0422AD681C4130D3007190F5 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422AD671C4130D3007190F5 /* FollowViewController.swift */; };
 		1B16C5171C3B5B2C0043C323 /* FriednsDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */; };
 		1B16C5191C3B5BB50043C323 /* DynamicLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */; };
 		1B58279E1C20584200CBEC82 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B58279D1C20584200CBEC82 /* Podfile */; };
@@ -16,7 +17,6 @@
 		1B6E9F7D1C1F9E240089542C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9F7C1C1F9E240089542C /* Assets.xcassets */; };
 		1B6E9F801C1F9E240089542C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E9F7E1C1F9E240089542C /* LaunchScreen.storyboard */; };
 		1B6E9F891C1FABBA0089542C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F881C1FABBA0089542C /* MainTabBarController.swift */; };
-		1B6E9F901C1FADAE0089542C /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F8F1C1FADAE0089542C /* FollowViewController.swift */; };
 		1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F931C1FAE1C0089542C /* MyViewController.swift */; };
 		1B6E9F961C1FAFE80089542C /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F951C1FAFE80089542C /* CommonData.swift */; };
 		1B6E9F981C1FB2580089542C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E9F971C1FB2580089542C /* WriteViewController.swift */; };
@@ -52,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		03589F9F6EDFE73BB3C1C2E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		0422AD671C4130D3007190F5 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriednsDynamicController.swift; sourceTree = "<group>"; };
 		1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLineCell.swift; sourceTree = "<group>"; };
 		1B58279D1C20584200CBEC82 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -63,7 +64,6 @@
 		1B6E9F7F1C1F9E240089542C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B6E9F811C1F9E240089542C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B6E9F881C1FABBA0089542C /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		1B6E9F8F1C1FADAE0089542C /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowViewController.swift; path = MJianshu/FollowViewController.swift; sourceTree = SOURCE_ROOT; };
 		1B6E9F931C1FAE1C0089542C /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyViewController.swift; path = MJianshu/MyViewController.swift; sourceTree = SOURCE_ROOT; };
 		1B6E9F951C1FAFE80089542C /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		1B6E9F971C1FB2580089542C /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteViewController.swift; path = ../../../WriteViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0422AD661C4130D3007190F5 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				0422AD671C4130D3007190F5 /* FollowViewController.swift */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
 		1B6E9F661C1F9E240089542C = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +141,9 @@
 		1B6E9F711C1F9E240089542C /* MJianshu */ = {
 			isa = PBXGroup;
 			children = (
+				0422AD661C4130D3007190F5 /* Follow */,
 				1B6E9F721C1F9E240089542C /* AppDelegate.swift */,
 				9B550E541C256D6D00217258 /* Find */,
-				1BD5B5021C37E0B500DD03E1 /* Follow */,
 				1BD5B4FF1C37E03700DD03E1 /* Write */,
 				1BD5B4F61C37DDF500DD03E1 /* Friends */,
 				1BD5B5011C37E09A00DD03E1 /* My */,
@@ -233,14 +241,6 @@
 				1B6E9F931C1FAE1C0089542C /* MyViewController.swift */,
 			);
 			path = My;
-			sourceTree = "<group>";
-		};
-		1BD5B5021C37E0B500DD03E1 /* Follow */ = {
-			isa = PBXGroup;
-			children = (
-				1B6E9F8F1C1FADAE0089542C /* FollowViewController.swift */,
-			);
-			path = Follow;
 			sourceTree = "<group>";
 		};
 		1BD96A841C20FB7E00371E4E /* Others */ = {
@@ -457,7 +457,6 @@
 				1B98CC181C3FD95D00169DFD /* ChatMessageLeftCell.swift in Sources */,
 				9B550E5F1C256DE200217258 /* ContentTableController.swift in Sources */,
 				1B6E9F731C1F9E240089542C /* AppDelegate.swift in Sources */,
-				1B6E9F901C1FADAE0089542C /* FollowViewController.swift in Sources */,
 				1B6E9F941C1FAE1C0089542C /* MyViewController.swift in Sources */,
 				1BD5B5061C37E6C900DD03E1 /* FriendsViewModel.swift in Sources */,
 				1B98CC1E1C3FDC8C00169DFD /* ChatModel.swift in Sources */,
@@ -478,6 +477,7 @@
 				1B98CC1A1C3FD97100169DFD /* ChatMessageRightCell.swift in Sources */,
 				1BD5B5041C37E4D900DD03E1 /* FriendsTableDatasourese.swift in Sources */,
 				9B4BEFF21C32B58400827771 /* TopScrollViewController.swift in Sources */,
+				0422AD681C4130D3007190F5 /* FollowViewController.swift in Sources */,
 				9B4BEFEE1C32AE5300827771 /* BottomScrollViewController.swift in Sources */,
 				1B98CC141C3FCF4E00169DFD /* JianMessageDataSourse.swift in Sources */,
 				9B4BEFF01C32AEBC00827771 /* BottomScrollView.swift in Sources */,

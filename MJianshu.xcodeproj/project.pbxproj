@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0422AD681C4130D3007190F5 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422AD671C4130D3007190F5 /* FollowViewController.swift */; };
 		04FC64481C43DD3C000B2310 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC64471C43DD3C000B2310 /* ColorManager.swift */; };
+		04FC644E1C43EE47000B2310 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC644D1C43EE47000B2310 /* FollowViewController.swift */; };
+		04FC64501C43EFD0000B2310 /* UIViewSXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC644F1C43EFD0000B2310 /* UIViewSXB.swift */; };
 		1B16C5171C3B5B2C0043C323 /* FriednsDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */; };
 		1B16C5191C3B5BB50043C323 /* DynamicLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */; };
 		1B2DA14A1C420DF2001C5199 /* ChatTableDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */; };
@@ -54,8 +55,9 @@
 
 /* Begin PBXFileReference section */
 		03589F9F6EDFE73BB3C1C2E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		0422AD671C4130D3007190F5 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		04FC64471C43DD3C000B2310 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		04FC644D1C43EE47000B2310 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		04FC644F1C43EFD0000B2310 /* UIViewSXB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSXB.swift; sourceTree = "<group>"; };
 		1B16C5161C3B5B2C0043C323 /* FriednsDynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriednsDynamicController.swift; sourceTree = "<group>"; };
 		1B16C5181C3B5BB50043C323 /* DynamicLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLineCell.swift; sourceTree = "<group>"; };
 		1B2DA1491C420DF2001C5199 /* ChatTableDataSourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableDataSourse.swift; sourceTree = "<group>"; };
@@ -115,12 +117,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0422AD661C4130D3007190F5 /* Follow */ = {
+		04FC64491C43EE47000B2310 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
-				0422AD671C4130D3007190F5 /* FollowViewController.swift */,
+				04FC644A1C43EE47000B2310 /* Model */,
+				04FC644B1C43EE47000B2310 /* View */,
+				04FC644C1C43EE47000B2310 /* ViewController */,
 			);
 			path = Follow;
+			sourceTree = "<group>";
+		};
+		04FC644A1C43EE47000B2310 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04FC644B1C43EE47000B2310 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04FC644C1C43EE47000B2310 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04FC644D1C43EE47000B2310 /* FollowViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		1B6E9F661C1F9E240089542C = {
@@ -145,7 +171,7 @@
 		1B6E9F711C1F9E240089542C /* MJianshu */ = {
 			isa = PBXGroup;
 			children = (
-				0422AD661C4130D3007190F5 /* Follow */,
+				04FC64491C43EE47000B2310 /* Follow */,
 				1B6E9F721C1F9E240089542C /* AppDelegate.swift */,
 				9BD209271C41EE4700CCFEDA /* Write */,
 				9B550E541C256D6D00217258 /* Find */,
@@ -164,6 +190,7 @@
 				1B6E9F881C1FABBA0089542C /* MainTabBarController.swift */,
 				1B6E9F951C1FAFE80089542C /* CommonData.swift */,
 				04FC64471C43DD3C000B2310 /* ColorManager.swift */,
+				04FC644F1C43EFD0000B2310 /* UIViewSXB.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -472,6 +499,7 @@
 				9B550E691C25740600217258 /* FindViewModel.swift in Sources */,
 				1B98CC111C3FC9FD00169DFD /* JianMessageCell.swift in Sources */,
 				1BF2EFAB1C2E9B0F00AB38FA /* ContentTableModel.swift in Sources */,
+				04FC644E1C43EE47000B2310 /* FollowViewController.swift in Sources */,
 				1B98CC1C1C3FDC6600169DFD /* UIInputView.swift in Sources */,
 				1B587EC31C3BC10F0034E116 /* FriendsDynamicDataSourse.swift in Sources */,
 				9B550E611C256DE200217258 /* ThemeScrollController.swift in Sources */,
@@ -483,10 +511,10 @@
 				1B98CC1A1C3FD97100169DFD /* ChatMessageRightCell.swift in Sources */,
 				1BD5B5041C37E4D900DD03E1 /* FriendsTableDatasourese.swift in Sources */,
 				9B4BEFF21C32B58400827771 /* TopScrollViewController.swift in Sources */,
-				0422AD681C4130D3007190F5 /* FollowViewController.swift in Sources */,
 				04FC64481C43DD3C000B2310 /* ColorManager.swift in Sources */,
 				9B4BEFEE1C32AE5300827771 /* BottomScrollViewController.swift in Sources */,
 				1B98CC141C3FCF4E00169DFD /* JianMessageDataSourse.swift in Sources */,
+				04FC64501C43EFD0000B2310 /* UIViewSXB.swift in Sources */,
 				9B4BEFF01C32AEBC00827771 /* BottomScrollView.swift in Sources */,
 				9B4BEFE81C32A5B700827771 /* ContentTableDatasource.swift in Sources */,
 				1B16C5171C3B5B2C0043C323 /* FriednsDynamicController.swift in Sources */,

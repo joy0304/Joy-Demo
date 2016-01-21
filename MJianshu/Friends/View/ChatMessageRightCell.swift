@@ -40,7 +40,7 @@ class ChatMessageRightCell: UITableViewCell {
         // 头像
         headImageView = UIButton()
         contentView.addSubview(headImageView)
-        headImageView.layer.borderWidth = 4
+        headImageView.layer.borderWidth = 2
         headImageView.layer.borderColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.5).CGColor
         headImageView.layer.cornerRadius = 25
         headImageView.clipsToBounds = true

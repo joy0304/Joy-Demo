@@ -26,7 +26,7 @@ class DynamicLineCell: UITableViewCell {
     let gapSpace: CGFloat = 25
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "lineCell")
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setSubviews()
     }

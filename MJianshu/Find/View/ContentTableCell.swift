@@ -22,7 +22,7 @@ class ContentTableCell: UITableViewCell {
     var favorNumber : Int?
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "contentCell")
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setSubviews()
     }

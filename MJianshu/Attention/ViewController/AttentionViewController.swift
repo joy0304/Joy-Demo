@@ -8,12 +8,13 @@
 
 import UIKit
 
-class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class AttentionViewController: UIViewController {
     
     var addItem:UIBarButtonItem?
     var pushItem:UIBarButtonItem?
 
-    var theTableView: UITableView!
+    var theTableView: AttentionTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,6 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
      */
     func setupUI() {
         view.backgroundColor = UIColor.whiteColor()
-        title = "全部关注"
         
         addItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addItemAction")
         addItem?.tintColor = ColorManger.mainColor()
@@ -51,11 +51,11 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
      配置TableView
      */
     func setupTableView() {
-        theTableView = UITableView(frame: MainBounds, style: .Plain)
-        theTableView.delegate = self
-        theTableView.dataSource = self
+        theTableView = AttentionTableView(frame: MainBounds, style: .Plain)
         theTableView.tableFooterView = UIView()
         view.addSubview(theTableView)
+        title = theTableView.theAttentionType.rawValue
+        
     }
     
     // MARK: Button Action
@@ -68,12 +68,3 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 }
 
-extension FollowViewController {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-}

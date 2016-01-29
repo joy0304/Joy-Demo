@@ -27,7 +27,7 @@ extension MainTabBarController{
         // 主页
         addChildVC(FindViewController(), title: "发现", image: "icon_tabbar_home", selected: "icon_tabbar_home_active")
         // 关注
-        addChildVC(FollowViewController(), title: "关注", image: "icon_tabbar_subscription", selected: "icon_tabbar_subscription_active")
+        addChildVC(AttentionViewController(), title: "关注", image: "icon_tabbar_subscription", selected: "icon_tabbar_subscription_active")
         // 添加中间的按钮
         addCenterButton(imageName: "button_write")
         // 简友

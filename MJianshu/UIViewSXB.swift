@@ -146,3 +146,27 @@ extension UIView {
     }
 }
 
+// MARK: - Tap Block
+
+// from https://github.com/Nero5023/ConvenienceAddTapGesture
+typealias TapBlockType = [UIView: (UITapGestureRecognizer -> ())]
+var tapBlockDic = TapBlockType()
+
+extension UIView {
+    func addTappGestureWithActionBlock(gestureAction:(UITapGestureRecognizer -> ())) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tapPerformBlock:"))
+        tapBlockDic[self] = gestureAction
+        self.userInteractionEnabled = true
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    func tapPerformBlock(tap: UITapGestureRecognizer) {
+        if let tapView = tap.view {
+            if let block = tapBlockDic[tapView] {
+                block(tap)
+            }
+            
+        }
+    }
+}
+

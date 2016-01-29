@@ -25,6 +25,16 @@ class AttentionViewController: UIViewController {
         // 配置TableView
         setupTableView()
         
+        // 添加 切换类型menu
+        let menuNavLable = UILabel()
+        menuNavLable.textAlignment = .Center
+        menuNavLable.frame = CGRectMake(0, 0, 200, 44)
+        menuNavLable.text = theTableView.theAttentionType.rawValue
+        navigationItem.titleView = menuNavLable
+        menuNavLable.addTappGestureWithActionBlock { (tapGesture) -> () in
+            print("change type")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +47,7 @@ class AttentionViewController: UIViewController {
      */
     func setupUI() {
         view.backgroundColor = UIColor.whiteColor()
-        
+        // 添加关注
         addItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addItemAction")
         addItem?.tintColor = ColorManger.mainColor()
         navigationItem.leftBarButtonItem = addItem
@@ -55,7 +65,6 @@ class AttentionViewController: UIViewController {
         theTableView.tableFooterView = UIView()
         view.addSubview(theTableView)
         title = theTableView.theAttentionType.rawValue
-        
     }
     
     // MARK: Button Action

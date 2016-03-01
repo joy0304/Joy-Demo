@@ -21,6 +21,8 @@
 * [UIScrollView重用调优——节省超过50%内存](http://www.jianshu.com/p/a7698be04d3f)
 * [Autolayout + UITableViewCell的动态布局](http://www.jianshu.com/p/3429ac5a4e4d)
 * [GCD编程相关知识](http://www.jianshu.com/p/69f76edf0a09)、[iOS多线程编程总结](http://www.jianshu.com/p/3356beed099f)
+* [内存优化的一些小技巧](http://www.jianshu.com/p/deab6550553a)
+* [高效添加圆角](http://www.jianshu.com/p/f970872fdc22)
 * 其他基础UI知识、数据处理知识等
 
 ## 更多交流

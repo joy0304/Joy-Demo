@@ -26,7 +26,7 @@
 * 其他基础UI知识、数据处理知识等
 
 ## 更多交流
-* 微博：[Martin_wjl](http://weibo.com/5419850564/profile?topnav=1&wvr=6)
-* 博客：[Martin_wjl](http://www.jianshu.com/users/9c51a213b02e/latest_articles)、[KTZhang](http://www.jianshu.com/users/3e55748920d2/latest_articles)
+* 微博：[Martin_wjl](http://weibo.com/5419850564/profile?topnav=1&wvr=6)、[bestswifter](http://weibo.com/bestswifter?from=feed&loc=at&nick=bestswifter&is_all=1)
+* 博客：[Martin_wjl](http://www.jianshu.com/users/9c51a213b02e/latest_articles)、[bestswifter](http://www.jianshu.com/users/3e55748920d2/latest_articles)
 * 有爱项目QQ交流群：331527020
 

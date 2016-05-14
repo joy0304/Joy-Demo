@@ -48,7 +48,7 @@ class FindView: UIView {
             segmentView.setWidth(segmentItemWidth, forSegmentAtIndex: 1)
             
             segmentView.selectedSegmentIndex = 0
-            segmentView.addTarget(self, action: "segmentValueChanged", forControlEvents: UIControlEvents.ValueChanged)
+            segmentView.addTarget(self, action: #selector(FindViewDelegate.segmentValueChanged), forControlEvents: UIControlEvents.ValueChanged)
         }
     }
     

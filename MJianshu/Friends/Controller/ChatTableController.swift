@@ -17,7 +17,7 @@ class ChatTableController: UIViewController ,UITableViewDelegate{
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardFrameChanged:"), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatTableController.keyboardFrameChanged(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -81,6 +81,8 @@ extension ChatTableController{
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.view.endEditing(true)
+        
+        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
     }
     
     func keyboardFrameChanged(notification: NSNotification) {

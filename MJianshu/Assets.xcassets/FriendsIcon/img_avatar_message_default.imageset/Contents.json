@@ -1,6 +1,17 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "3-part-vertical",
+        "center" : {
+          "mode" : "tile",
+          "height" : 1
+        },
+        "cap-insets" : {
+          "top" : 44,
+          "bottom" : 45
+        }
+      },
       "idiom" : "universal",
       "filename" : "21d526846127.png",
       "scale" : "1x"

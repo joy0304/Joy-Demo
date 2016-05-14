@@ -154,7 +154,7 @@ var tapBlockDic = TapBlockType()
 
 extension UIView {
     func addTappGestureWithActionBlock(gestureAction:(UITapGestureRecognizer -> ())) {
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tapPerformBlock:"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(UIView.tapPerformBlock(_:)))
         tapBlockDic[self] = gestureAction
         self.userInteractionEnabled = true
         self.addGestureRecognizer(tapGesture)

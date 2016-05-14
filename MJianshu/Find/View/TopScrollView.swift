@@ -66,7 +66,7 @@ class TopScrollView: UIView {
             label.sizeToFit()
             label.tag = idx
             label.userInteractionEnabled = true
-            label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "labelClicked:"))
+            label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TopScrollViewDelegate.labelClicked(_:))))
             topContainerView.addSubview(label)
             
             if themeArr.count == 3{
@@ -91,6 +91,7 @@ class TopScrollView: UIView {
                     make.height.equalTo(topContainerView)
                     if idx > 0, let previousLabel = topScroll.subviews[0].subviews[idx - 1] as? UILabel {
                         make.left.equalTo(previousLabel.snp_right).offset(labelGapX * 2)
+                        //let temp = previousLabel.snp_width
                     } else {
                         make.left.equalTo(labelGapX)
                     }

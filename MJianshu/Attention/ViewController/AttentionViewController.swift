@@ -48,11 +48,11 @@ class AttentionViewController: UIViewController {
     func setupUI() {
         view.backgroundColor = UIColor.whiteColor()
         // 添加关注
-        addItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addItemAction")
+        addItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(AttentionViewController.addItemAction))
         addItem?.tintColor = ColorManger.mainColor()
         navigationItem.leftBarButtonItem = addItem
         // 暂时没有找到推送设置的小图标
-        pushItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "pushItemAction")
+        pushItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(AttentionViewController.pushItemAction))
         pushItem?.tintColor = UIColor.lightGrayColor()
         navigationItem.rightBarButtonItem = pushItem
     }

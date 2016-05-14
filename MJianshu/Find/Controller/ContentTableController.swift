@@ -41,8 +41,14 @@ class ContentTableController: UIViewController, UITableViewDelegate {
         tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: dataSource, refreshingAction: Selector("updateInfoList"))
         tableView.mj_header.beginRefreshing()
         // 上拉刷新
-        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: dataSource, refreshingAction: "loadMoreInfo")
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: dataSource, refreshingAction: Selector("loadMoreInfo"))
         
     }
 
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.view.endEditing(true)
+        
+        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+    }
 }

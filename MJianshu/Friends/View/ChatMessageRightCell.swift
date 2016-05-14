@@ -68,7 +68,7 @@ class ChatMessageRightCell: UITableViewCell {
         // 内容视图
         contentButton = UIButton()
         contentView.insertSubview(contentButton, belowSubview: contentLabel)
-        contentButton.imageView?.contentMode = .ScaleAspectFill
+        contentButton.imageView?.contentMode = .ScaleToFill
         contentButton.setBackgroundImage(UIImage(named: "right_message_back"), forState: .Normal)
         contentButton.snp_makeConstraints { (make) -> Void in
             make.trailing.equalTo(contentView).offset(-70)

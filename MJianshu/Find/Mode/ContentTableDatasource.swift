@@ -57,6 +57,7 @@ extension ContentTableDatasource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = "contentCell"
+        _ = indexPath.row
         var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? ContentTableCell
         if cell == nil{
             cell = ContentTableCell(style: UITableViewCellStyle.Default, reuseIdentifier: identifier)

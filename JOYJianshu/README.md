@@ -1,10 +1,3 @@
-##  希望小手能顺便点一下右上角的⭐️Star ^_^，朋友的鼓励和支持是我们继续分享的动力
-***
-
-#### Swift高仿“简书”，功能正在进行逐渐的完善，希望您可以多多给建议，让我们一起做出更完善的开源项目。
-#### 本人是大三党，由于最近期末测评，可能会有十多天的时间来进行期末复习，更新“M简书”的速度可能比较慢，希望还可以继续支持。
-***
-
 ####  效果展示：
 ![概况图](http://ww2.sinaimg.cn/large/0060lm7Tgw1ezudam4g7pg30b20jrqv8.gif)
 
@@ -25,8 +18,4 @@
 * [高效添加圆角](http://www.jianshu.com/p/f970872fdc22)
 * 其他基础UI知识、数据处理知识等
 
-## 更多交流
-* 微博：[Martin_wjl](http://weibo.com/5419850564/profile?topnav=1&wvr=6)、[bestswifter](http://weibo.com/bestswifter?from=feed&loc=at&nick=bestswifter&is_all=1)
-* 博客：[Martin_wjl](http://www.jianshu.com/users/9c51a213b02e/latest_articles)、[bestswifter](http://www.jianshu.com/users/3e55748920d2/latest_articles)
-* 有爱项目QQ交流群：331527020
 

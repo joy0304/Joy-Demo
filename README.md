@@ -1,7 +1,7 @@
 ## 平时项目
 
 
-* [JOYJianshu](https://github.com/Wl201314/JoyDemo/tree/master/JOYJianshu)：当初对简书的一个简单仿写
+* [JOYJianshu](https://github.com/Wl201314/JoyDemo/tree/master/JOYJianshu)：当初对简书的一个简单仿写（最后更新于 2016 年 1 月，语法 Swift 2.2,版本较老，不建议下载、使用）
 
 
 

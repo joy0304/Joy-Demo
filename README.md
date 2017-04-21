@@ -10,3 +10,5 @@
 
 
 * [JYHookInstanceMethod](https://github.com/joy0304/JoyDemo/tree/master/JYHookInstanceMethod)：聊聊如何为一个实例动态替换方法
+
+* [如何在代码中获取 HTTP 协议的版本](https://github.com/joy0304/JoyDemo/tree/master/getHTTPVersion)
